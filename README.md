@@ -3,6 +3,31 @@
 Fine-tuning LLaMA 3.1 8B with QLoRA on a curated Lithuanian geography 
 question-answer dataset to improve instruction-following in a low-resource language.
 
+## Structure
+
+The project is structured as follows:
+
+DL_LLM_fine_tuning/
+├── README.md
+├── .gitignore
+├── data/
+│   ├── raw/
+│   │   ├── articles_raw.json          # scraped articles
+│   │   └── articles_filtered.json     # after text length filtering
+│   ├── processed/
+│   │   ├── articles_top250.json       # balanced subset for annotation
+│   │   └── dataset.json               # full annotated dataset (637 pairs)
+│   └── split/
+│       ├── train.json
+│       └── test.json
+├── scripts/
+│   ├── scrape.py
+│   ├── filter.py
+│   ├── annotate.py
+│   └── split_dataset.py
+└── notebooks/
+    └── finetune.ipynb
+
 ## Dataset
 
 637 QA pairs across 14 geographic categories (counties, cities, rivers, lakes, 
