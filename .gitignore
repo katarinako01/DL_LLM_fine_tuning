@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# project specific
+__pycache__/
+*.pyc
+.env
+*.ipynb_checkpoints/
+annotation_failed.json
+articles_*.json
+dataset.json
+dataset_v1.json
