@@ -12,17 +12,21 @@ DL_LLM_fine_tuning/
 ├── .gitignore
 ├── data/
 │   ├── raw/
-│   │   ├── articles_raw.json          # scraped articles
-│   │   └── articles_filtered.json     # after text length filtering
+│   │   └── articles_raw.json                  # scraped articles
 │   ├── processed/
-│   │   ├── articles_top250.json       # balanced subset for annotation
-│   │   └── dataset.json               # full annotated dataset (637 pairs)
+│   │   ├── articles_top250.json               # balanced subset for annotation
+│   │   ├── articles_filtered.json             # after text length filtering
+│   │   ├── articles_filtered_removed.json     # after text length filtering (removed pairs)
+│   │   ├── articles_removed_manually.json     # articles, removed during a manual check
+│   │   └── dataset.json                       # full annotated dataset (637 pairs)
 │   └── split/
 │       ├── train.json
 │       └── test.json
 ├── scripts/
 │   ├── scrape.py
 │   ├── filter.py
+│   ├── check.py # a checkup script for duplicates
+│   ├── subset.py # a subset script to take top 250 articles
 │   ├── annotate.py
 │   └── split_dataset.py
 └── notebooks/
