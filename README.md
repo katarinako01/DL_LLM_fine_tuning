@@ -6,7 +6,7 @@ question-answer dataset to improve instruction-following in a low-resource langu
 ## Structure
 
 The project is structured as follows:
-
+```
 DL_LLM_fine_tuning/
 ├── README.md
 ├── .gitignore
@@ -27,6 +27,7 @@ DL_LLM_fine_tuning/
 │   └── split_dataset.py
 └── notebooks/
     └── finetune.ipynb
+```
 
 ## Dataset
 
