@@ -1,3 +1,18 @@
+"""
+annotation.py
+---------
+Purpose of this file:
+
+Annotates filtered articles to create a Lithuania geography-focused
+QA dataset in Lithuanian 
+
+Usage:
+    python annotation.py --input articles_top250.json --output dataset.json --api-key YOUR_API_KEY
+
+Note: Requires an Anthropic API key from https://platform.claude.com/
+      One full run (~213 articles) costs approximately $3 USD.
+"""
+
 #imports / libraries
 import re
 import json
@@ -142,9 +157,9 @@ def call_api(title: str, text: str, api_key: str, _retry: bool = True) -> list[d
         logging.error(f"request error for '{title}': {e}")
         return None
     
-    #logging.warning(f"FULL RESPONSE for '{title}': {repr(str(data)[:500])}") # used for debugging
+    #logging.warning(f"FULL RESPONSE for '{title}': {repr(str(data)[:500])}") # was used for debugging
     raw = data.get("content", [{}])[0].get("text", "").strip()
-    #logging.warning(f"RAW for '{title}': {repr(raw[:500])}") # used for debugging
+    #logging.warning(f"RAW for '{title}': {repr(raw[:500])}") # was used for debugging
 
     raw = data.get("content", [{}])[0].get("text", "").strip()
 
