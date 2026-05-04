@@ -1,6 +1,16 @@
 # Lithuanian Geography QA for LLaMA 3.1 8B QLoRA Fine-Tuning
 
-Fine-tuning LLaMA 3.1 8B with QLoRA on a curated Lithuanian geography 
+Lithuanian is a low-resource language in the NLP landscape, it remains underrepresented in LLM training data. 
+Prior work has shown that leading open-weight models produce 8.01 grammatical 
+errors and 4.28 invented words per 100 words when generating Lithuanian text 
+(Kapočiūtė-Dzikienė et al., 2025). No publicly available Lithuanian geography 
+QA dataset exists, making this a good contribution that can serve as:
+
+- A fine-tuning resource for improving Lithuanian instruction-following in LLMs
+- A template for constructing similar datasets for other low-resource languages 
+  using synthetic annotation pipelines
+
+Main objective: Fine-tuning LLaMA 3.1 8B with QLoRA on a curated Lithuanian geography 
 question-answer dataset to improve instruction-following in a low-resource language.
 
 ## Structure
@@ -126,6 +136,55 @@ weaknesses in Lithuanian text generation — 8.01 grammatical errors per 100
 words and 4.28 invented words per 100 (Kapočiūtė-Dzikienė et al., 2025). 
 This makes it a good candidate to evaluate whether domain-specific QLoRA 
 fine-tuning can meaningfully improve performance in a low-resource language.
+
+## Results & Discussion
+
+### Quantitative Results
+
+| Metric | Base LLaMA 3.1 8B | Fine-tuned | 
+|---|---|---|
+| Lithuanian language (%) | 77.2% | **100%** |
+| No looping/repetition (%) | 78.9% | **100%** |
+| Avg response length (words) | 40.7 | **32.2** (expected: 33.1) |
+| Hallucination refusal (5 probes) | 0/5 | 0/5 |
+
+### Key Findings
+
+**What fine-tuning improved:**
+- Language consistency — the base model frequently switched to English, 
+  generated code snippets, or produced GitHub URLs mid-response. The 
+  fine-tuned model responds exclusively in Lithuanian.
+- Generation control — 21.1% of base model responses contained degenerate 
+  looping (repeating the same phrase or prompt template). The fine-tuned 
+  model eliminated this entirely.
+- Response format — the fine-tuned model produces structured 2-4 sentence 
+  answers matching the expected format, while the base model often gives 
+  single-word answers or unstructured text.
+
+**What fine-tuning did not improve:**
+- Factual accuracy — both models hallucinate geographic facts (incorrect 
+  dates, areas, locations). This is expected: 518 training examples can 
+  teach format and language style but cannot overwrite the model's 
+  pre-trained knowledge (Gekhman et al., 2024).
+- Refusal behavior — neither model correctly identifies fictional geographic 
+  entities (0/5 on hallucination probes). The 20 manually added refusal 
+  examples were insufficient among 518 geography pairs. Increasing the 
+  proportion of refusal examples or using reinforcement learning from 
+  human feedback (RLHF) could address this.
+- Conversational patterns — greetings and out-of-scope queries received 
+  weak responses, again due to limited representation in training data.
+
+### Implications
+
+These results align with recent research showing that fine-tuning on 
+knowledge absent from pre-training data encourages hallucination rather 
+than reliable factual recall (Gekhman et al., 2024; Weng, 2024). For 
+production use, this model would require retrieval-augmented generation 
+(RAG) to ground responses in verified source documents at inference time.
+
+Despite these limitations, the fine-tuning demonstrates clear value for 
+improving low-resource language instruction-following — a practical 
+contribution given the scarcity of Lithuanian NLP resources.
 
 ## Limitations
 
