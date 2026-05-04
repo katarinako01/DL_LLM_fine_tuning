@@ -1,0 +1,317 @@
+[
+  {
+    "instruction": "Kaip atrodo Eišiškių piliavietės gynybiniai įtvirtinimai ir kokie jų matmenys?",
+    "input": "",
+    "output": "Piliavietė yra 84 × 112 metrų dydžio aikštė, apjuosta maždaug 4 metrų aukščio ir 18–20 metrų pločio pylimu. Už pylimo driekiasi apie 26 metrų pločio ir 5 metrų gylio griovys. Pylimo šiaurės vakarų kampe išlikę apie 8 metrų skersmens daugiakampio arba apvalaus mūrinio gynybinio bokšto pamatų liekanos, kurios laikomos senaisiais pilies vartais."
+  },
+  {
+    "instruction": "Kuo Gaidžiabalės samanynė ypatinga gamtosaugos požiūriu?",
+    "input": "",
+    "output": "Tai viena iš nedaugelio didesnių, beveik natūralių aukštapelkių šiaurinėje Lietuvos dalyje. Samanynėje gyvena kelios į Lietuvos raudonąją knygą įtrauktos paukščių rūšys: sketsakaliai, pilkosios gervės, tikučiai, plėšriosios medšarkės, vidutinės kuolingos, taip pat pasitaiko tetervinų. Be to, pelkėje gausu angių, o saugoma teritorija apima grybų, augalų rūšis ir gyvūnų buveines."
+  },
+  {
+    "instruction": "Kuo Kaukų piliakalnis yra susijęs su aplinkine gynybine sistema?",
+    "input": "",
+    "output": "Šis piliakalnis yra tik viena gynybinio komplekso dalis – priešais, Peršėkės dešiniajame krante, stūkso kita to paties komplekso dalis, vadinama Obelytės piliakalniu. Taip abu piliakalniai kartu sudarė bendrą gynybinę sistemą, išnaudojant upės vingį kaip natūralią kliūtį."
+  },
+  {
+    "instruction": "Kuo Viliukų miškas yra svarbus Europos gamtosaugos požiūriu?",
+    "input": "",
+    "output": "Nuo 2005 metų Viliukų miškas pripažintas Europos ekologinio tinklo „Natura 2000“ buveinių apsaugai svarbia teritorija. Joje saugomos retos europinės svarbos drugelių rūšys – baltamargė šaškytė ir didysis auksinukas. Atliktų biologinės įvairovės tyrimų metu taip pat aptiktos saugomo drugelio akiuotojo satyro ir vabalo purpurinio plokščiavabalio populiacijos, taip pat kelios saugomos augalų rūšys, tarp jų stačioji dirvuolė, aukštoji gegūnė ir žalsvažiedė blandis."
+  },
+  {
+    "instruction": "Kada ir kokiu būdu Antašavos dvaras gavo savo dabartinį pavadinimą?",
+    "input": "",
+    "output": "1782 ir 1784 metais LDK poručikas Hiacintas Antoševskis supirko dalį bajorų palivarkų ir pavadino dvarą Antašava pagal savo pavardę. Iki tol gyvenvietė buvo žinoma kaip Papyvesys arba Papyvesiai – pavadinimas kilo nuo pro šalį tekančios Pyvesos upės."
+  },
+  {
+    "instruction": "Kokią teritoriją apėmė Ašmenos apskritis ir kur ji buvo įsikūrusi?",
+    "input": "",
+    "output": "Ašmenos apskritis buvo įsikūrusi į pietryčius nuo Vilniaus, Ašmenos aukštumoje. Jos teritorija driekėsi per dabartinės Baltarusijos šiaurės vakarinę dalį – Gardino, Minsko ir Vitebsko sričių rajonus – taip pat apėmė Lietuvos Švenčionių rajoną ir Dieveniškių seniūniją."
+  },
+  {
+    "instruction": "Kokiame tarpupyje yra įsikūrusi Aukštaičių aukštuma ir iš kokių kalvynų ji susideda?",
+    "input": "",
+    "output": "Aukštaičių aukštuma driekiasi Neries, Dauguvos, Šventosios ir Žeimenos tarpupyje ir yra šiaurinė Baltijos aukštumų dalis. Ji susideda iš keturių kalvynų: Sėlių, Utenos, Molėtų ir Riešės. Kiekvienas kalvynas turi savo aukščiausią tašką ir skirtingą reljefą."
+  },
+  {
+    "instruction": "Kiek metrų siekia aukščiausia Dzūkijos vieta ir kaip ji vadinasi?",
+    "input": "",
+    "output": "Aukščiausia Dzūkijos vieta yra Gedanonių kalva, siekianti 257,7 metro aukštį. Ji priklauso Aukštadvario daliai, į kurią Dzūkų aukštuma yra suskaidyta Strėvos ir Verknės upių."
+  },
+  {
+    "instruction": "Kiek valstybinių draustinių buvo Lietuvoje 2002 metais ir koks buvo jų bendras plotas?",
+    "input": "",
+    "output": "2002 metais Lietuvoje veikė 265 valstybiniai draustiniai, kurių bendras plotas siekė 157 272 hektarus. Vėliau, 2007 metais, draustinių skaičius šiek tiek sumažėjo iki 260, tačiau jų bendras plotas išaugo iki 161 105 hektarų."
+  },
+  {
+    "instruction": "Kur yra įsikūręs Reiskių tyras ir kokie pagrindiniai jo gamtiniai bruožai?",
+    "input": "",
+    "output": "Ši pelkė yra vakarų Lietuvoje, Plungės rajono pietvakariuose, Kulių miškuose, maždaug 4,5 km į šiaurės vakarus nuo Kulių. Ji užima 8,75 km² plotą ir pasižymi plyninės aukštapelkės pobūdžiu – aplink ją driekiasi kimininiai plynraisčiai, o vidurinėje dalyje gausu ežerokšnių ir telkšo Reiskių ežeras."
+  },
+  {
+    "instruction": "Kada ir kokios valdžios iniciatyva buvo įkurta Alytaus apskritis?",
+    "input": "",
+    "output": "Alytaus apskritis buvo sudaryta 1915 m. rugsėjį vokiečių okupacinės valdžios sprendimu. Tuo metu ji vokiškai vadinosi Kreis Alita, o apskrityje įsikūrė apskrities viršininko įstaiga ir žandarmerijos nuovada."
+  },
+  {
+    "instruction": "Kada ir kokio tarptautinio sąrašo dalimi tapo Lietuvos kryždirbystė?",
+    "input": "",
+    "output": "2001 m. gegužės 18 d. UNESCO paskelbė pirmuosius devyniolika Žmonijos nematerialaus ir žodinio paveldo šedevrų sąrašo punktų, ir kryždirbystė bei kryžių simbolika buvo įtrauktos į šį sąrašą. UNESCO pažymėjo, kad ši tradicija atstovauja Lietuvos kultūrai jau keturis šimtmečius ir išliko iki XXI amžiaus."
+  },
+  {
+    "instruction": "Kur prasideda Nemunas ir kaip atrodo jo aukštupys?",
+    "input": "",
+    "output": "Upė prasideda Baltarusijoje, maždaug 45 km į pietus nuo Minsko, pelkėtame Baltarusijos aukštumų pažemėjime, 179 metrų aukštyje virš jūros lygio. Aukštupyje Nemunas teka plačiu slėniu, vagos plotis žemiau Ščiaros žiočių siekia 150–280 m, gylis – iki 4 m, o salpa užima beveik visą slėnį ir yra 2–4 km pločio. Upė vingiuoja per salpą, sudarydama nemažai senvagių ir meandrų."
+  },
+  {
+    "instruction": "Kiek ežerų yra Sūduvos aukštumoje ir kokie didžiausi iš jų?",
+    "input": "",
+    "output": "Sūduvos aukštumoje yra apie 250 ežerų. Šiauriniame aukštumos pakraštyje išsidėstę dideli guolinio tipo ežerai – Dusia, Metelys, Obelija ir Rimietis. Čia taip pat yra giliausias Lenkijos ežeras Ančia bei kiti gilūs ir dideli ežerai – Vygriai, Didysis Šelmentas, Bočnė ir Rospudas."
+  },
+  {
+    "instruction": "Kuo Betygala yra išskirtinė istoriniu ir kultūriniu požiūriu?",
+    "input": "",
+    "output": "Betygala pirmą kartą istoriniuose šaltiniuose paminėta 1253 metais, todėl yra viena seniausių Lietuvos gyvenviečių. Prie miestelio išlikęs piliakalnis ir alkas, o apylinkėse gausu senkapių. Miestelyje veikia Betygalos muziejus, kuriame saugomos krašto istorijos, dailininko J. Kuzminskio ir geologijos ekspozicijos."
+  },
+  {
+    "instruction": "Kuo lietuviškas sodas yra reikšmingas tradicinės dekoratyvinės dailės kontekste ir kokiose šalyse dar paplitęs panašus paprotys?",
+    "input": "",
+    "output": "Šiaudiniai sodai laikomi viena įspūdingiausių lietuvių paprotinės dekoratyvinės dailės rūšių, gyvybingų iki šių dienų. Panašus paprotys puošti patalpas tokiais papuošalais istoriškai buvo paplitęs ir kitose Šiaurės bei Rytų Europos šalyse – Latvijoje, Estijoje, Šiaurės šalyse, Vokietijoje, Lenkijoje bei kituose slavų kraštuose."
+  },
+  {
+    "instruction": "Kuo Alaušo ežeras yra išskirtinis kultūriniu ir kalbiniu požiūriu?",
+    "input": "",
+    "output": "Su šiuo ežeru susijęs rašytojo Vaižganto kūrinys „Alaušo varpas“, kuriame aprašoma legenda apie ežere nuskandintą bažnyčios varpą. Pats ežero pavadinimas kildinamas iš šaknies al-, kurios vedinys alėti reiškia „tekėti, varvėti“. Svėdasuose prie ežero veikia dvi kaimo turizmo sodybos ir įrengtas paplūdimys."
+  },
+  {
+    "instruction": "Kiek sodybų buvo Kirdonių kaime 2011 metais?",
+    "input": "",
+    "output": "2011 metais Kirdonių kaime buvo užfiksuotos 138 sodybos. Kaimas yra įsikūręs Biržų rajono savivaldybės vakaruose ir yra seniūnaitijos centras, kuriame veikia biblioteka."
+  },
+  {
+    "instruction": "Kokia yra Jonušavos istorinė svarba Kėdainių miesto raidai?",
+    "input": "",
+    "output": "Jonušava formavosi kaip vakarinis Kėdainių priemiestis, o jos kūrimąsi apie 1627 metus inicijavo Kristupas II Radvila. Vietovė plėtojosi dvaro laukuose prie Vilniaus–Raseinių kelio. Seniau ji buvo vadinama Naujaisiais Kėdainiais, o ilgainiui tapo neatskiriama miesto dalimi."
+  },
+  {
+    "instruction": "Kada Panų kalnas buvo įrašytas į Lietuvos Respublikos nekilnojamųjų kultūros vertybių registrą?",
+    "input": "",
+    "output": "Panų kalnas į Lietuvos Respublikos nekilnojamųjų kultūros vertybių registrą įrašytas 1996 m. gruodžio 23 d. Jam suteiktas registro kodas 3472. Šis objektas laikomas istorinės ir mitologinės reikšmės alkakalnio tipo vieta."
+  },
+  {
+    "instruction": "Kuo Žagarės giria išsiskiria gamtosaugos požiūriu?",
+    "input": "",
+    "output": "Girijos teritorijoje yra keli gamtos paminklai: Reibiniškių ąžuolas, Beržynės miško ąžuolas, Žagarės miško veimutinė pušis ir Žeimių vinkšna. Be to, čia registruotos 41 kertinė miško buveinė, taip pat į Lietuvos raudonąją knygą įrašytų paukščių lizdavietės ir perimvietės, todėl giria turi didelę ekologinę vertę."
+  },
+  {
+    "instruction": "Kokie medžiai vyrauja Biržų girios botaniniame draustinyje ir kokie saugomi elementai jame yra svarbiausi?",
+    "input": "",
+    "output": "Draustinyje vyrauja brandūs plačialapiai medžiai: ąžuolai, liepos, klevai, skroblai, uosiai, guobos, skirpstai ir vinkšnos. Ypač vertinami biologiškai seni medžiai, drevėti medžiai, seni lazdynų krūmai, taip pat yrančios medienos liekanos – rąstai ir stuobriai, kurie praturtina augavietes."
+  },
+  {
+    "instruction": "Kuo dabartinis Lietuvos apskričių statusas skiriasi nuo istorinio jų vaidmens?",
+    "input": "",
+    "output": "Istoriškai apskritis buvo realus administracinis vienetas, egzistavęs nuo XIV amžiaus su pertraukomis iki 2010 metų. Šiandien Lietuva suskirstyta į 10 apskričių, tačiau jos atlieka tik teritorinę, o ne administracinę funkciją. Taigi apskritis neteko valdymo galios ir tapo vien geografinio suskirstymo priemone."
+  },
+  {
+    "instruction": "Kokių archeologinių radinių buvo aptikta Šiaulių miesto centre ir kada jie datuojami?",
+    "input": "",
+    "output": "1954 m. Aušros muziejaus organizuotų kasinėjimų Varpo gatvėje metu buvo atkasti žmogaus griaučiai ir keli kapai su įkapėmis. Šie radiniai datuojami XIV a. pabaiga – XV amžiumi."
+  },
+  {
+    "instruction": "Koks yra Luksnėnų ežero didžiausias gylis ir bendras plotas?",
+    "input": "",
+    "output": "Luksnėnų ežero didžiausias gylis siekia 7,4 metro, o vidutinis – 4,2 metro. Ežero plotas yra 65,7 hektaro, o jo baseino plotas – 3,8 kvadratiniai kilometrai."
+  },
+  {
+    "instruction": "Koks yra Rūdninkų girios bendras plotas ir kiek iš jo užima miškai?",
+    "input": "",
+    "output": "Rūdninkų girios bendras plotas siekia apie 37 500 hektarų, iš kurių mišku apaugę 32 900 hektarų. Giria yra penktas pagal plotą Lietuvos miškų masyvas, išsidėstęs Šalčininkų ir Varėnos rajonuose, maždaug 23 kilometrus į pietus nuo Vilniaus."
+  },
+  {
+    "instruction": "Kur yra įsikūręs Strauzdžio ežeras ir kokie jo pagrindiniai kraštovaizdžio bruožai?",
+    "input": "",
+    "output": "Šis ežeras telkšo pietvakarių Lietuvoje, Alytaus rajone, maždaug 8 km į vakarus nuo Alytaus, netoli Ūdrijos miestelio. Krantai žemi, apaugę krūmais ir pelkėti – aplink ežerą driekiasi apie 20 ha dydžio pelkė, nusitęsianti į šiaurę. Šalia įsikūrę Duselninkų ir Pakašavo kaimai."
+  },
+  {
+    "instruction": "Kaip dainų švenčių tradicija pasiekė Baltijos šalis ir kokios buvo pirmosios šventės?",
+    "input": "",
+    "output": "Dainų švenčių tradicija į Baltijos šalis atkeliavo per Baltijos vokiečius. Pirmiausia ji įsitvirtino Estijoje – 1869 m. Tartu mieste, vėliau Latvijoje – 1873 m. Rygoje, taip pat Mažojoje Lietuvoje. Vakarų Europoje ši tradicija ilgainiui išblėso, tačiau Baltijos šalyse išliko iki šių dienų."
+  },
+  {
+    "instruction": "Kur yra įsikūręs Kauno naujamiestis ir kokie yra jo pagrindiniai viešieji erdvių bei gatvių akcentai?",
+    "input": "",
+    "output": "Naujamiestis užima centrinę Kauno miesto dalį, esančią į rytus nuo Senamiesčio. Pagrindinė jo gatvė – 1,5 kilometro ilgio Laisvės alėja, prasidedanti ties Vytauto prospektu ir besibaigianti Senamiesčio pradžioje. Svarbios viešosios erdvės – Vienybės, J. Mačiūno ir Savivaldybės aikštės."
+  },
+  {
+    "instruction": "Kur yra įsikūrusi Debesnų pelkė ir kokiai saugomai teritorijai ji priklauso?",
+    "input": "",
+    "output": "Debesnų pelkė telkšo Telšių rajone, į vakarus nuo Varnių. Ji priklauso Varnių regioninio parko Debesnų telmologiniam draustiniui, kurio tikslas – išsaugoti paežerinę pelkę su saugomomis augalų rūšimis, gyvūnų buveinėmis ir kultūros vertybėmis, tarp jų – Varnių senovės gyvenviete."
+  },
+  {
+    "instruction": "Kur teka Katra ir kokiose valstybėse ji yra?",
+    "input": "",
+    "output": "Ši upė teka pietryčių Lietuvoje, Varėnos rajone, ir Baltarusijoje – Gardino bei Ščiutino rajonuose. Lietuvos teritorijoje ji teka valstybine siena su Baltarusija, Čepkelių raisto pietiniu pakraščiu. Žemupyje upė kerta Gardino–Mastų geležinkelį."
+  },
+  {
+    "instruction": "Kada Zarasų apskritis buvo pertvarkyta į rajoną ir kiek apylinkių sudarė naujasis Zarasų rajonas?",
+    "input": "",
+    "output": "1950 m. birželio 20 d. buvusi Zarasų apskritis buvo pertvarkyta į Zarasų rajoną, kurį sudarė 24 apylinkės. Dalis apskrities teritorijos tuo pat metu perduota Dūkšto, Dusetų ir Obelių rajonams."
+  },
+  {
+    "instruction": "Kada įsteigtas Cimakavo draustinis ir koks buvo jo pradinis statusas?",
+    "input": "",
+    "output": "Cimakavo draustinis įsteigtas 1998 metais kaip ornitologinis draustinis. 2026 metais jo statusas pakeistas į botaninį-zoologinį draustinį, o pati teritorija išplėsta."
+  },
+  {
+    "instruction": "Kokia yra Šilų pelkės sandara ir kokie durpių tipai joje vyrauja?",
+    "input": "",
+    "output": "Pelkė slūgso dviejuose lygiagrečiuose moreniniuose tarpgūbriuose, nusidriekusiuose iš šiaurės į pietus. Didžiąją jos dalį sudaro plynraistinė tarpinio tipo pelkė ir aukštapelkė, o likusioje dalyje – raistinė žemapelkė. Durpių klodo vidutinis storis siekia 1,4 m, o didžiausias – 3,2 m. Pusė visų durpių yra žemapelkinio pobūdžio, ketvirtadalis – aukštapelkinio, o likusieji – tarpinio."
+  },
+  {
+    "instruction": "Kuo Čepkelių rezervatas išsiskiria tarptautiniu mastu?",
+    "input": "",
+    "output": "Nuo 1993 metų Čepkeliai pripažinti tarptautinės svarbos šlapžeme ir saugomi Ramsaro konvencijos. Rezervatas taip pat yra Europos ekologinio tinklo Natura 2000 dalis. 2019 metais jam suteiktas Europos laukinės gamtos teritorijų sertifikatas, patvirtinantis išskirtinę šios vietovės gamtinę vertę."
+  },
+  {
+    "instruction": "Kuo ypatinga Adutiškio padėtis Lietuvos ir Baltarusijos pasienyje?",
+    "input": "",
+    "output": "Šioje vietovėje Lietuvos ir Baltarusijos siena unikaliai eina geležinkeliu Lentupis–Pastovys. Adutiškio geležinkelio stotis kadaise buvo abiejose valstybėse, tačiau dabar veikia tik Baltarusijos pusėje. Netoli miestelio driekiasi Antanų giria – pats šiaurryčiausias rajono pakraštys, kuris susijungia su Polocko lygumos giriomis ir siekia Dauguvą."
+  },
+  {
+    "instruction": "Kaip atrodo Šeškinės ozas ir iš kokių medžiagų jis sudarytas?",
+    "input": "",
+    "output": "Tai vingiuotas pylimo formos kalvagūbris, besitęsiantis iš pietvakarių į šiaurės rytus ir turintis tris ryškius posūkius. Santykinis aukštis siekia nuo 3 iki 18 metrų, o šlaitų nuožulnumas – nuo 7 iki 30 laipsnių. Kalvagūbrį sudaro įžambiai sluoksniuotas žvyras ir įvairiagrūdis smėlis, žvyre pasitaiko nemažai riedulių, kurių skersmuo viršija 0,5 metro."
+  },
+  {
+    "instruction": "Kuo išskirtinė Lietuvos miškų apsaugos situacija ir kaip apibrėžiama miško žemė pagal naudojamą metodiką?",
+    "input": "",
+    "output": "Beveik trečdalis – tiksliau 32,5 procento arba daugiau nei 707,5 tūkstančių hektarų – visų Lietuvos miškų yra saugomų teritorijų ribose arba jų buferinėse zonose. Miško žemei priskiriama ne tik brandžiais medžiais apaugusi žemė, bet ir dirvonuojantys plotai, brūzgynai, neatsodinti plyni kirtimai, daigynai, sėklinės plantacijos bei miško keliai ir trasos."
+  },
+  {
+    "instruction": "Kuo Darbėnų pavadinimas susijęs su vietovės geografija?",
+    "input": "",
+    "output": "Miestelio pavadinimas kilęs nuo Darbos upelio, prie kurio jis įsikūrė – prie pavadinimo pridėta priesaga -ėnai. Pats miestelis išaugo kairiajame Darbos krante, šalia dvaro. Taip upės vardas tapo tiesiogine vietovardžio kilmės priežastimi."
+  },
+  {
+    "instruction": "Kada buvo atlikti žvalgomieji archeologiniai Alytaus piliakalnio tyrimai ir kas juos vykdė?",
+    "input": "",
+    "output": "Žvalgomieji archeologiniai tyrimai piliakalnio teritorijoje buvo atlikti 1985–1986 metais. Juos vykdė Alytaus kraštotyros muziejus, o tyrimams vadovavo Eugenijus Svetikas. Surasti radiniai šiuo metu saugomi Alytaus muziejuje."
+  },
+  {
+    "instruction": "Koks yra didžiausias Suvingio ežero gylis ir kur jis užfiksuotas?",
+    "input": "",
+    "output": "Giliausias Suvingio ežero taškas siekia 13,3 metro. Ši vieta yra šiaurinėje ežero dalyje. Ežero dubuo susidarė ledo lūstavietėje."
+  },
+  {
+    "instruction": "Koks yra Juodosios Ančios upės ilgis ir kiek jos teka Lenkijos teritorijoje?",
+    "input": "",
+    "output": "Juodosios Ančios ilgis siekia apie 142–145 km. Iš viso ilgio apie 108 km teka Lenkijoje, o apie 35 km – Baltarusijoje. Upė įteka į Nemuną Gardino srities ir Lazdijų rajono pasienyje, netoli Varviškės kaimo."
+  },
+  {
+    "instruction": "Kada Molavėnų I piliakalnis buvo įrašytas į Kultūros vertybių registrą ir kokio dydžio yra jo saugoma teritorija?",
+    "input": "",
+    "output": "Piliakalnis į Kultūros vertybių registrą įrašytas 1992 metais. Jo saugoma teritorija užima 60 149 kvadratinius metrus ir priklauso Dubysos regioninio parko Pašešuvio kraštovaizdžio draustiniui."
+  },
+  {
+    "instruction": "Kuo Dovainonių apylinkės išsiskiria archeologiniu ir gamtiniu požiūriu?",
+    "input": "",
+    "output": "Tarp Dovainonių ir Kapitoniškių kaimų stūkso I tūkstantmečio vidurio – XIII amžiaus piliakalnis, o netoliese aptikti Dovainonių pilkapynai. Prie Kauno marių atsiveria Dovainonių atodanga su paskutinio ledynmečio klodais, kuri yra svarbus geologinis objektas. Šios vietovės apylinkėse išlikę ir daugiau ankstyvųjų gyventojų pėdsakų."
+  },
+  {
+    "instruction": "Kur yra įsikūręs Dubičių piliakalnis ir kokie pagrindiniai jo gynybinio komplekso bruožai?",
+    "input": "",
+    "output": "Piliakalnis stūkso Ūlos kairiajame krante, buvusio Pelesos ežero pakraštyje, Varėnos rajono savivaldybės teritorijoje, prie Dubičių kaimo. Gynybinį kompleksą sudaro dvi apie 6 metrų aukščio stačiais šlaitais kalvos, atskirtos 10–15 metrų pločio grioviu, o iš šiaurės rytų ir pietvakarių jas juosia 2 metrų aukščio pylimas. Aikštelių matmenys yra 25 x 20 metrų ir 45 x 30 metrų."
+  },
+  {
+    "instruction": "Kuo išsiskiria Petrašiūnų dolomito telkinys Lietuvos mastu?",
+    "input": "",
+    "output": "Tai vienas didžiausių dolomito telkinių visoje Lietuvoje. Dolomitas čia kasamas atviruoju būdu, o išžvalgyti ištekliai – 25 milijonai kubinių metrų – rodo šio telkinio išskirtinę reikšmę šalies naudingųjų iškasenų gavybai."
+  },
+  {
+    "instruction": "Kur yra Meškų botaninis-zoologinis draustinis ir kokias teritorijas jis apima?",
+    "input": "",
+    "output": "Draustinis įsikūręs Tauragės rajone ir apima Šešuvies upės slėnio užliejamas pievas šalia Meškų kaimo. Jo teritorijoje randamos įvairios gamtinės buveinės: natūralūs eutrofiniai ežerai, stepinės pievos, aliuvinės pievos, šienaujamos mezofitų pievos, medžiais apaugusios ganyklos ir kitos."
+  },
+  {
+    "instruction": "Kokia istorinė reikšmė siejama su Molavėnų II piliakalniu?",
+    "input": "",
+    "output": "Piliakalnis datuojamas antro tūkstantmečio pirmąja puse. Manoma, kad šioje vietoje stovėjo lietuvių Vienvangių pilis, žinoma kryžiuočių kronikų šaltiniuose – ji minima 1384, 1388 ir 1395 metais. Taip pat piliakalnio apylinkėse auga saugomas Molavėnų ąžuolas, o lankytojams įrengti pėsčiųjų takai, tilteliai ir renginių vieta."
+  },
+  {
+    "instruction": "Kokio dydžio yra Liudiškių piliakalnio viršutinė aikštelė ir kaip ji orientuota?",
+    "input": "",
+    "output": "Piliakalnio viršuje esanti aikštelė yra ovali, pailga rytų–vakarų kryptimi ir matuoja 23x18 metrų. Rytiniame šlaite, dviem metrais žemiau aikštelės, išlikusi 10 metrų ilgio ir 5 metrų pločio terasa, kuri šiek tiek nuolaidėja į rytus ir laikoma buvusio pylimo liekanomis."
+  },
+  {
+    "instruction": "Kuo Baltijos šalių dainų ir šokių švenčių tradicija ypatinga tarptautiniu mastu?",
+    "input": "",
+    "output": "Nors dainų švenčių tradicija kadaise buvo paplitusi didelėje Europos dalyje, šiandien ji išlikusi tik Baltijos šalyse. 2003 m. lapkričio 7 d. UNESCO pripažino Estijos, Latvijos ir Lietuvos dainų ir šokių švenčių tradiciją bei simboliką Žmonijos žodinio ir nematerialaus kultūros paveldo šedevru. Tai liudija išskirtinę šios tradicijos vertę pasauliniu mastu."
+  },
+  {
+    "instruction": "Koks yra aukščiausias Ašmenos aukštumos taškas ir kur jis yra?",
+    "input": "",
+    "output": "Aukščiausias Ašmenos aukštumos taškas yra Milidovskajos kalnas, esantis Smurgainių rajone, netoli Milidovščinos kaimo. Jo aukštis siekia 320 metrų virš jūros lygio."
+  },
+  {
+    "instruction": "Kur yra Jonušava ir kokie pagrindiniai jos bruožai?",
+    "input": "",
+    "output": "Jonušava yra Kėdainių miesto dalis, įsikūrusi į vakarus nuo Kėdainių senamiesčio. Šioje dalyje vyrauja nuosavų gyvenamųjų namų kvartalai, taip pat yra dauguma miesto daugiabučių namų, pastatytų dvidešimtojo amžiaus aštuntajame ir devintajame dešimtmečiuose. Čia veikia keli prekybos centrai, dvi vidurinės mokyklos, gimnazija ir du vaikų darželiai."
+  },
+  {
+    "instruction": "Kur yra Bubių tvenkinys ir kokie pagrindiniai jo geografiniai bruožai?",
+    "input": "",
+    "output": "Šis vandens telkinys įsikūręs šiaurės Lietuvoje, Šiaulių rajone, maždaug 6–10 km į pietvakarius nuo Šiaulių. Jis susiformavo užtvenkus Dubysą ir Ringuvos upę ties Pailių kaimu, o pakilęs vanduo suliejo tris ežerus – Jonelaičių, Raizgių ir Balniaus. Tvenkinio plotas siekia 418,3 ha, tūris – 21,2 mln. m³, didžiausias gylis – 14 m, o forma primena netaisyklingą raidę V."
+  },
+  {
+    "instruction": "Kur yra įsikūręs Deltuvos miestelis ir kokie svarbiausi jo geografiniai bei infrastruktūros bruožai?",
+    "input": "",
+    "output": "Deltuva yra Ukmergės rajono savivaldybėje, prie kelio Kėdainiai–Šėta–Ukmergė, maždaug 6 kilometrus į vakarus nuo Ukmergės. Vakariniu miestelio pakraščiu teka dešinysis Šventosios intakas Armona. Miestelyje veikia paštas, bendruomenės namai, yra kapinės ir keletas istorinių bei kultūrinių objektų."
+  },
+  {
+    "instruction": "Kada ir kokiu teisės aktu buvo formaliai apibrėžta miesto sąvoka Lietuvoje?",
+    "input": "",
+    "output": "Miesto sąvoka Lietuvoje buvo formaliai apibrėžta 1994 metais priimtame Lietuvos Respublikos teritorijos administracinių vienetų ir jų ribų įstatyme. Pagal šį įstatymą, miestas turi turėti daugiau kaip 3000 gyventojų, o bent du trečdaliai dirbančiųjų turi būti užimti pramonėje, verslo, gamybinės ir socialinės infrastruktūros srityse."
+  },
+  {
+    "instruction": "Kuo Ašmenos apskritis išsiskyrė tarp kitų Lietuvos Didžiosios Kunigaikštystės administracinių vienetų?",
+    "input": "",
+    "output": "Ašmenos apskritis buvo laikoma viena didžiausių Lietuvos Didžiosios Kunigaikštystės apskričių. Nuo 1566 metų ji aiškiai suformuota ir įtraukta į Vilniaus vaivadiją, o jos žemės teismai veikė keliuose miestuose – Švenčionyse, Ašmenoje ir Medile. 1775 metais apskritis buvo padalinta administracinės reformos metu, iš jos šiaurinės dalies sudarant Užnerio apskritį."
+  },
+  {
+    "instruction": "Kokios upės teka Rūdninkų girios pakraščiais ir kokia upė skiria ją nuo kaimyninių miškų pietuose?",
+    "input": "",
+    "output": "Šiauriniu ir vakariniu girios pakraščiu vingiuoja Merkys su smulkiais intakais – Raudonėle, Špigule, Didžiuoju ir Mažuoju Pirčiupiu bei Upėse. Pietinėje dalyje teka Šalčia ir jos intakas Visinčia. Būtent Šalčios upė pietuose atskiria Rūdninkų girią nuo Šalčios–Tetėnų miškų."
+  },
+  {
+    "instruction": "Kokie svarbiausi gamtiniai objektai yra Anykščių regioniniame parke?",
+    "input": "",
+    "output": "Parko teritorijoje driekiasi vaizdingi Šventosios, Elmės ir kitų upelių slėniai bei raguvynai, o slėnio pievos užliejamos potvynių metu. Išraiškingas Storių kalvynas, plačiai žinomas Anykščių šilelis, dideli rieduliai Puntukas ir Puntuko brolis bei Karalienės liūno šaltinis – tai tik dalis gamtos vertybių. Poilsiautojų pamėgti Rubikių ir Mūšėjaus ežerai."
+  },
+  {
+    "instruction": "Kuo Kauno sporto halė išskirtinė Europos mastu?",
+    "input": "",
+    "output": "Kauno sporto halė laikoma pirmąja specialiai krepšiniui pastatyta arena visoje Europoje. Jos statyba buvo itin sudėtingas uždavinys – pastatas turėjo būti pastatytas per ne visą pusmetį, iš kurių trys mėnesiai teko žiemai, nepalankiausiam statyboms metui."
+  },
+  {
+    "instruction": "Kur yra įsikūręs Lebelių durpynas ir kokie jo pagrindiniai bruožai?",
+    "input": "",
+    "output": "Šis durpynas yra Akmenės rajone, 3,5 km į šiaurės rytus nuo Akmenės, į rytus nuo Kamanų pelkės. Jo bendras plotas siekia 3,2 km², iš kurių 2,62 km² sudaro pramoninė zona. Durpyną sudaro sausuminės kilmės raistinė aukštapelkė, ištįsusi apie 3 km rytų–vakarų kryptimi. Pelkės dugne driekiasi priemolis ir priesmėlis."
+  },
+  {
+    "instruction": "Kur prasideda Strėva ir į kurią pusę teka jos aukštupys?",
+    "input": "",
+    "output": "Strėva prasideda Mackantiškių kaime, esančiame maždaug 5 kilometrus į rytus nuo Aukštadvario. Pačiame aukštupyje upė teka rytų kryptimi, pratekėdama ežerų virtinę: Šamuką, Drabužį, Spindžiuką ir Spindžių, vėliau pasuka į šiaurę."
+  },
+  {
+    "instruction": "Kokio ploto yra Tyrų pelkė ir kokie vandens telkiniai ją kerta ar iš jos teka?",
+    "input": "",
+    "output": "Tyrų pelkė užima 11,3 km² plotą. Ją kerta Klaipėdos kanalas, o iš pelkės į Kuršių marias teka du upeliukai – Ataka ir Jodatakė."
+  },
+  {
+    "instruction": "Kuriose Lietuvos srityse susitelkę daugiausia ežerų ir kokie ežerynai ten susiformavę?",
+    "input": "",
+    "output": "Ežeringiausi regionai yra Baltijos ir Žemaičių aukštumos, taip pat Dainavos ir Neries-Žeimenos žemumos. Aukštaičių aukštumoje susiformavę Molėtų, Dubingių ir Zarasų ežerynai, Dzūkų ir Sūduvos aukštumose – Trakų, Aukštadvario ežerynai bei didžiųjų Sūduvos ežerų grupė. Dainavos žemumoje driekiasi Veisiejų ežerynas, o Neries-Žeimenos žemumoje – Ignalinos ežerynas."
+  }
+]

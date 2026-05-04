@@ -1,0 +1,344 @@
+[
+  {
+    "instruction": "Kada ir kokiomis aplinkybėmis Druskininkų, Marcinkonių ir Rudnios valsčiai buvo perduoti Lietuvai?",
+    "input": "",
+    "output": "Šie trys valsčiai baltarusių iniciatyva buvo perduoti Lietuvai 1940 m. rugpjūčio 3 d. Vėliau, 1941 m. sausio 15 d., jie oficialiai prijungti prie Alytaus apskrities.",
+    "category": "county"
+  },
+  {
+    "instruction": "Kur geografiškai buvo įsikūrusi Gardino apskritis ir kas buvo jos centras?",
+    "input": "",
+    "output": "Gardino apskritis buvo įsikūrusi dabartinės vakarų Gudijos ir pietų Lietuvos teritorijoje, į pietus nuo Alytaus. Apskrities administracinis centras buvo Gardinas.",
+    "category": "county"
+  },
+  {
+    "instruction": "Kokia buvo Gardino apskrities administracinė priklausomybė tarpukariu ir kuo baigėsi jos gyvavimas?",
+    "input": "",
+    "output": "1920–1939 m. apskritis priklausė Lenkijai, o 1921–1939 m. buvo Balstogės vaivadijos dalis. Po 1939 m. rudens ji atiteko Baltarusijos TSR Balstogės sričiai ir galiausiai 1940 m. sausio 15 d. buvo panaikinta.",
+    "category": "county"
+  },
+  {
+    "instruction": "Kada ir kokiomis aplinkybėmis Lydos apskritis buvo panaikinta?",
+    "input": "",
+    "output": "1939 m. Sovietų Sąjungai okupavus rytų Lenkiją, apskrities teritorija buvo padalyta: Eišiškių valsčius atiteko Lietuvai ir įėjo į Valkininkų apskritį, o likusi dalis buvo prijungta prie Baltarusijos TSR Baranovičių srities. Oficialiai apskritis nustojo egzistavusi 1940 m. sausio 15 d.",
+    "category": "county"
+  },
+  {
+    "instruction": "Kur buvo įsikūrusi Lydos apskritis ir kokią teritoriją ji apėmė?",
+    "input": "",
+    "output": "Apskritis buvo įsikūrusi į pietus nuo Vilniaus, dabartinės Baltarusijos ir Lietuvos teritorijose. Ji apėmė žemes, kuriose šiandien yra Lydos, Varanavo ir Ščiutino rajonai Baltarusijoje, taip pat Lietuvos pietinį pakraštį su Eišiškių seniūnija. Administracinis apskrities centras buvo Lyda.",
+    "category": "county"
+  },
+  {
+    "instruction": "Kuo Lydos apskritis išsiskiria savo administracinės raidos istorijoje tarpukariu?",
+    "input": "",
+    "output": "Apskritis susiformavo sujungus tris vokiškąsias administracines teritorijas – Vosyliškių, Rodūnios ir Plentos apskritis – ir taip beveik atkūrė ankstesnės Rusiškosios srities ribas. 1929 m. dalis jos teritorijos buvo atskirta ir sudaryta atskira Ščiutino apskritis. Nors 1920 m. ši teritorija pagal Maskvos taikos sutartį buvo pripažinta Lietuvai, tais pačiais metais ją okupavo Lenkija ir įtraukė į Naugarduko vaivadijos sudėtį.",
+    "category": "county"
+  },
+  {
+    "instruction": "Kiek ūkininkų gyveno prie Kleboniškio palivarko 1782 metais ir kiek ten buvo dirbamos žemės?",
+    "input": "",
+    "output": "1782 metais prie Kleboniškio palivarko įsikūrusiame netaisyklingo plano kaime gyveno 10 ūkininkų. Dirbamos žemės tuo metu buvo 8 valakai. Kaimas buvo įsikūręs netaisyklingo plano, o apylinkėse veikė kelios karčiamos.",
+    "category": "city"
+  },
+  {
+    "instruction": "Kur yra Kleboniškis ir kokie gamtiniai bei infrastruktūros objektai jį supoja?",
+    "input": "",
+    "output": "Kleboniškis yra šiaurinėje Kauno miesto dalyje, kairiajame Neries krante, maždaug 9 kilometrus nuo upės žiočių. Vietovę supa Kleboniškio miškas, kuriame teka upelis Žiobrikis, o šiauriau plaukia Neris. Miestelio centre susikerta Kleboniškio ir Undinės gatvės, čia veikia parduotuvė, yra kapinės ir galutinė autobusų stotelė. Su kitomis miesto dalimis – Eiguliais ir Senamiestiu – jungiasi per mišką einanti Kleboniškio gatvė, kurios pakraštyje nutiestas dviračių takas.",
+    "category": "city"
+  },
+  {
+    "instruction": "Kuo Kleboniškis išsiskiria istoriniu ir archeologiniu požiūriu?",
+    "input": "",
+    "output": "Smėlėtose Neries pakrantėse šioje vietovėje aptikta akmens amžiaus stovyklaviečių – randama titnago dirbinių. Miške išlikę Pirmojo pasaulinio karo laikotarpio fortifikacijos paveldo objektai – Kleboniškio bunkeriai. Priešingame Neries krante stūkso Lentainių piliakalnis, o gretimoje gyvenvietėje – Naujasodžio piliakalnis, todėl apylinkės pasižymi itin turtingu archeologiniu palikimu.",
+    "category": "city"
+  },
+  {
+    "instruction": "Kada buvo pastatyti Kalniečiai ir kas juos projektavo?",
+    "input": "",
+    "output": "Kalniečiai buvo pastatyti 1975–1985 metais. Šį Kauno miesto rajoną projektavo architektai A. Steponavičius, G. Miškinienė ir A. Krasilnikova. Bendras rajono plotas siekia 78,39 hektaro, iš kurių 14,86 hektaro užima parko teritorija.",
+    "category": "city"
+  },
+  {
+    "instruction": "Kur Kauno mieste yra įsikūrę Kalniečiai ir kokie pagrindiniai infrastruktūros objektai juose veikia?",
+    "input": "",
+    "output": "Kalniečiai yra šiaurės rytiniame Kauno pakraštyje – į šiaurę nuo Žaliakalnio ir į vakarus nuo Dainavos. Rajone veikia LSMUL Kauno Klinikos, Kalniečių poliklinika, VDU „Rasos“ gimnazija, Kauno Antano Smetonos gimnazija, keli prekybos centrai bei Kalniečių parkas su tvenkiniu. Rajonas susideda iš trijų mikrorajonų, kuriuose vyrauja daugiaaukščiai namai.",
+    "category": "city"
+  },
+  {
+    "instruction": "Kuo išskirtinė Kalniečių rajono architektūra, palyginti su kitais panašiais sovietmečiu statytais rajonais?",
+    "input": "",
+    "output": "Vienas ryškiausių Kalniečių architektūrinių sprendimų – namų kompozicinis sutelkimas aplink pėsčiųjų gatves ir kiemus, kurie veda į prekyvietes, viešojo transporto stoteles, mokyklas ir darželius. Savitą išvaizdą rajonui suteikia ir neįprastai dideli namų numeriai (3×4 m), kiekvienoje gatvėje nudažyti skirtingomis spalvomis. Vyrauja vadinamosios Kauno serijos 5, 9 ir 12 aukštų surenkamieji stambiaplokščiai gyvenamieji namai.",
+    "category": "city"
+  },
+  {
+    "instruction": "Kas ir kada pirmą kartą aprašė Aukštadvario piliakalnį?",
+    "input": "",
+    "output": "Piliakalnį 1928 metais aprašė Petras Tarasenka. Vėliau, 1957–1960 metais, žvalgomuosius archeologinius tyrimus atliko Lietuvos istorijos institutas, vadovaujamas Vytauto Daugudžio, kuris ištyrė piliakalnio aikštelės vakarinę ir pietvakarinę dalis – iš viso 958 kvadratinius metrus.",
+    "category": "small_town"
+  },
+  {
+    "instruction": "Kokia yra Aukštadvario piliakalnio aikštelės forma, dydis ir gynybiniai elementai?",
+    "input": "",
+    "output": "Aikštelė yra ovalios formos, rytų–vakarų kryptimi siekia 80 x 50 metrų. Ją juosia 0,6–2 metrų aukščio ir 14 metrų pločio pylimas, kuris šiauriniame pakraštyje neišlikęs. Piliakalnio šlaitai statūs, jų aukštis siekia nuo 9 iki 15 metrų.",
+    "category": "small_town"
+  },
+  {
+    "instruction": "Kuo Aukštadvario piliakalnis išsiskiria savo istorine ir archeologine reikšme?",
+    "input": "",
+    "output": "Šioje vietoje X–XIV amžiais stovėjo medinė pilis, o vėliau įsikūrė Didžiojo kunigaikščio dvaras. Piliakalnio aikštelėje aptikta II–I amžių prieš mūsų erą medinės gynybinės užtvaros ir pastatų liekanų, o rytinėje, pietinėje ir vakarinėje pašlaitėse, dviejų hektarų plote, išlikusi III–XIV amžių papėdės gyvenvietė. Rasti akmeniniai kirvukai, kauliniai adikliai, ylų, smeigtukų ir geležies gargažių.",
+    "category": "small_town"
+  },
+  {
+    "instruction": "Kada pirmą kartą istoriniuose šaltiniuose minimas Butrimonių miestelis?",
+    "input": "",
+    "output": "Butrimonys pirmą kartą paminėti 1510 m. spalio 28 d. Manoma, kad miestelio vardas yra asmenvardinis vietovardis, kilęs nuo pavardės Butrimonis. XIV–XV amžiais gyvenvietė kūrėsi prie svarbaus Vilniaus–Punios kelio.",
+    "category": "small_town"
+  },
+  {
+    "instruction": "Kur įsikūręs Butrimonių miestelis ir kokie yra jo pagrindiniai urbanistiniai bruožai?",
+    "input": "",
+    "output": "Miestelis yra Alytaus rajono savivaldybėje, prie plento Punia–Onuškis, abipus Plasaupės upelio. Jis laikomas urbanistikos paminklu ir pasižymi radialine plano struktūra. Senojoje dalyje, susiformavusioje iki XVIII amžiaus pabaigos, išliko senas gatvių tinklas, o trijų pagrindinių gatvių sankryžoje stovi vienintelė Lietuvoje trikampė aikštė.",
+    "category": "small_town"
+  },
+  {
+    "instruction": "Kuo Butrimonių miestelis yra išskirtinis Lietuvos urbanistikos kontekste?",
+    "input": "",
+    "output": "Butrimonys išsiskiria tuo, kad jų senojoje dalyje yra vienintelė Lietuvoje trikampė aikštė, esanti trijų pagrindinių gatvių sankryžoje. Miestelis pripažintas urbanistikos paminklu. Aikštę supa XX amžiaus pradžios pirklių ir amatininkų namai, o visam ansambliui būdingi vienaukščiai mediniai ir mūriniai XIX amžiaus pabaigos – XX amžiaus pradžios statiniai.",
+    "category": "small_town"
+  },
+  {
+    "instruction": "Kokie yra pagrindiniai Peršėkės upės matmenys – vagos plotis ir srovės greitis?",
+    "input": "",
+    "output": "Vagos plotis aukštupyje siekia 3–5 metrus, o vidurupyje ir žemupyje – 6–8 metrus. Srovės greitis svyruoja nuo 0,2 iki 0,4 metro per sekundę, o vagos nuolydis yra 120 cm/km.",
+    "category": "river"
+  },
+  {
+    "instruction": "Kur prasideda ir kur įteka Peršėkė, bei kokiuose regioniniuose parkuose ji teka?",
+    "input": "",
+    "output": "Upė prasideda Gervėnų kaimo apylinkėse Lazdijų rajone ir įteka į Nemuno kilpą ties Balbieriškiu. Aukštupys patenka į Metelių regioninio parko teritoriją, o žemupys – į Nemuno kilpų regioninį parką.",
+    "category": "river"
+  },
+  {
+    "instruction": "Kuo išskirtinis Peršėkės baseinas gamtiniu požiūriu ir kokia yra upės potvynių ypatybė?",
+    "input": "",
+    "output": "Peršėkės baseine telkšo nemažai ežerų – Obelija, Metelys, Atesys ir Angininkų ežeras. Pavasariniai potvyniai yra trumpi ir staigūs: vandens lygis žemupyje gali pakilti net 3 metrus. Be to, ties Krokialaukiu upė patvenkta 78 hektarų ploto tvenkiniu.",
+    "category": "river"
+  },
+  {
+    "instruction": "Į kurį upę įteka Marvelė ir kiek kilometrų nuo žiočių yra santaka?",
+    "input": "",
+    "output": "Marvelė įteka į Nemuną 207,4 km atstumu nuo jo žiočių. Santaka yra tuoj už vietos, kur Nemunas susitinka su Nerimi. Marvelė laikoma kairiuoju Nemuno intaku.",
+    "category": "river"
+  },
+  {
+    "instruction": "Kokiomis vietovėmis teka Marvelės upelis ir kur jis prasideda?",
+    "input": "",
+    "output": "Upelis prasideda laukuose netoli Alšėnų kaimo ir teka šiaurės rytų kryptimi. Savo kelyje jis prateka Vakarinį lankstą, Armaniškes, Julijanavą ir žemupyje – Marvelės gyvenvietę. Upelis teka tiek Kauno rajone, tiek Kauno miesto pietinėje dalyje.",
+    "category": "river"
+  },
+  {
+    "instruction": "Kuo išskirtinis Marvelės upės slėnis ir kokia jo istorija pastaraisiais dešimtmečiais?",
+    "input": "",
+    "output": "Marvelės upės slėnis yra vaizdingas gamtinis objektas su įspūdingomis kaskandomis, tačiau ilgą laiką buvo paverstas šiukšlynu. Tvarkymo talkos prasidėjo 2004 metais, o 2012 metų rudenį sutvarkytas slėnis buvo atidarytas lankymui. Lankytojams įrengti betoniniai laiptai, tiltelis per upelį ir informacinis stendas, o erdvė pritaikyta ir masiniams renginiams.",
+    "category": "river"
+  },
+  {
+    "instruction": "Koks yra Atesio ežero didžiausias gylis ir kur jis užfiksuotas?",
+    "input": "",
+    "output": "Giliausias ežero taškas siekia 13,9 metro. Ši vieta yra ežero šiaurinėje dalyje. Ežero altitudė – 92,1 metro virš jūros lygio.",
+    "category": "lake"
+  },
+  {
+    "instruction": "Kur yra Atesio ežeras ir kokie pagrindiniai jo geografiniai bruožai?",
+    "input": "",
+    "output": "Ežeras telkšo pietų Lietuvoje, Alytaus rajono vakaruose, maždaug 4,5 kilometro į rytus nuo Simno. Jo ilgis šiaurės–pietų kryptimi siekia 2,3 kilometro, o plotis – 0,65 kilometro. Krantai aukšti, statūs ir ardomi, o dugnas daubotas, padengtas dumblingu moliu.",
+    "category": "lake"
+  },
+  {
+    "instruction": "Kuo Atesio ežeras išsiskiria savo hidrologiniais ypatumais ir ryšiu su aplinkiniais vandens telkiniais?",
+    "input": "",
+    "output": "Į ežerą suteka trys upeliai, o per jį prateka Atesė – Peršekės intakas, priklausantis Nemuno baseinui. Vandens apykaita ežere trunka 5,46 metų, o tai rodo gana lėtą vandens atsinaujinimą. Ežerą supa dirbami laukai, o jo šiaurine pakrante eina geležinkelis Kazlų Rūda–Alytus.",
+    "category": "lake"
+  },
+  {
+    "instruction": "Kokio ilgio ir pločio yra Baldono ežeras?",
+    "input": "",
+    "output": "Baldono ežeras driekiasi šiaurės vakarų–pietryčių kryptimi ir yra 1,07 km ilgio bei iki 0,25 km pločio. Jo altitudė siekia 123,2 metro.",
+    "category": "lake"
+  },
+  {
+    "instruction": "Kur yra įsikūręs Baldono ežeras ir kokie jo krantų bei apylinkių bruožai?",
+    "input": "",
+    "output": "Šis ežeras telkšo Anykščių rajono rytuose, paribyje su Molėtų rajonu, maždaug 8 km į pietryčius nuo Kurklių. Krantai daugiausia aukšti ir apaugę miškeliais, tačiau ežero galuose, kur įteka ir išteka upeliai, jie žemi ir pelkėti. Rytinėje pakrantėje įsikūrę Dapkūniškių ir Pabaldonės kaimai.",
+    "category": "lake"
+  },
+  {
+    "instruction": "Kuo Baldono ežeras išsiskiria savo hidrologiniais ryšiais ir gamtosaugine reikšme?",
+    "input": "",
+    "output": "Iš šiaurės vakarų į ežerą įteka Keršos upelis, atitekantis iš Keršių ežero, o pietryčiuose išteka Baldonė, jungianti šį ežerą su kitu Baldono ežeru, esančiu vos 25 metrų atstumu – abu priklauso Šventosios baseinui. Ežeras įeina į Baldono geomorfologinio draustinio sudėtį, todėl turi gamtosauginę reikšmę.",
+    "category": "lake"
+  },
+  {
+    "instruction": "Nuo kada Kirkilai minimi istorijos šaltiniuose ir kokiame kontekste jie pirmą kartą paminėti?",
+    "input": "",
+    "output": "Kirkilai istorijos šaltiniuose pirmą kartą paminėti 1585 m. gegužės 3 d. Upytės pilies teismo byloje buvo užfiksuotas Kirkilų laukas. Vėliau, 1645 m., kaimas minimas kaip Kirkilowie ir, nors buvo netoli Biržų, Biržų kunigaikštystei nepriklausė.",
+    "category": "regional_park"
+  },
+  {
+    "instruction": "Kur yra įsikūręs Kirkilų kaimas ir kokie pagrindiniai gamtiniai objektai jį supa?",
+    "input": "",
+    "output": "Kaimas įsikūręs Biržų rajono savivaldybės šiaurės vakaruose, maždaug 8 km nuo Biržų, Biržų regioniniame parke. Jo teritorijoje telkšo 3,9 ha ploto Kirkilų ežeras, o per patį kaimą prateka Šilinės upeliukas, kuris yra Apaščios intakas. Į vakarus nuo kaimo prasideda Čeriaukštės upelio ištakos.",
+    "category": "regional_park"
+  },
+  {
+    "instruction": "Kuo Kirkilų kaimo herbas yra išskirtinis Lietuvos mastu?",
+    "input": "",
+    "output": "2010 m. patvirtintas Kirkilų herbas yra vienas iš labai retų atvejų Lietuvoje, kai herbas suteikiamas gyvenvietei, neturinčiai nei miesto, nei miestelio ar seniūnijos centro teisių. Herbo pagrindinis elementas siejamas su pavardės Kirkilas reta reikšme – eržilas, kurią nustatė kalbininkas Jonas Jablonskis.",
+    "category": "regional_park"
+  },
+  {
+    "instruction": "Kada Šeimyniškėlių kaimas buvo įjungtas į kolūkį „Voruta“?",
+    "input": "",
+    "output": "Šeimyniškėlių kaimas į kolūkį „Voruta“ buvo įjungtas 1949 m. rugpjūčio 12 d. Vėliau, iki 1974 m., kaimas priklausė J. Biliūno kolūkiui, o 1974–1992 m. – Elmininkų bandymų stoties eksperimentiniam ūkiui.",
+    "category": "regional_park"
+  },
+  {
+    "instruction": "Kur yra įsikūręs Šeimyniškėlių kaimas ir kokie pagrindiniai jo geografiniai bruožai?",
+    "input": "",
+    "output": "Kaimas yra Anykščių rajono savivaldybėje, vos 1 km į šiaurės rytus nuo Anykščių, kairiajame Šventosios upės krante, prie Elmės ir Variaus žiočių. Jo teritorija priklauso Anykščių regioniniam parkui, o prie Šventosios įrengtas paplūdimys. Pro kaimą eina keletas rajoninių kelių, o pietiniu pakraščiu driekiasi plentas Radiškis–Anykščiai–Rokiškis.",
+    "category": "regional_park"
+  },
+  {
+    "instruction": "Kuo Šeimyniškėlių kaimas išskirtinis istoriniu ir kultūriniu požiūriu?",
+    "input": "",
+    "output": "Kaime stūkso didingas Šeimyniškėlių piliakalnis, kurį kai kurie istorikai sieja su legendine Vorutos pilimi, priklausiusia karaliui Mindaugui. Šioje vietoje įkurtas Šeimyniškėlių kraštovaizdžio istorinis draustinis. Be to, kaimas minimas jau 1765 m. Ukmergės apskrities inventoriuose, kai tuo metu priklausė Lietuvos Didžiajam Kunigaikščiui.",
+    "category": "regional_park"
+  },
+  {
+    "instruction": "Kada Rumbonių piliakalnis buvo paskelbtas kultūros paminklu ir koks yra jo paminklo teritorijos plotas?",
+    "input": "",
+    "output": "Rumbonių piliakalnis kultūros paminklu paskelbtas 1998 metų gegužės 19 dieną Lietuvos Respublikos Vyriausybės nutarimu Nr. 612. Paminklo teritorijos plotas siekia 28 800 kvadratinių metrų, o fizinio apsaugos zonos pozonio plotas – 5 000 kvadratinių metrų.",
+    "category": "castle"
+  },
+  {
+    "instruction": "Kur yra įsikūręs Rumbonių piliakalnis ir kokie yra pagrindiniai jo fiziniai bruožai?",
+    "input": "",
+    "output": "Piliakalnis stovi Nemuno kairiajame ir Pilupio dešiniajame krante esančiame kyšulyje, Rumbonių kaime, Alytaus seniūnijoje. Jo aikštelė yra ovali, pailga vakarų–rytų kryptimi, maždaug 10 x 9 metrų dydžio, o šlaitai statūs – nuo 12 iki 30 metrų aukščio. Aikštelę iš rytų, pietų ir vakarų juosia pylimas, kurio aukštis svyruoja nuo 1,5 metro pietuose iki 4,5 metro vakaruose.",
+    "category": "castle"
+  },
+  {
+    "instruction": "Kuo Rumbonių piliakalnio forma yra išskirtinė ir kokie gamtiniai veiksniai pakeitė jo išvaizdą?",
+    "input": "",
+    "output": "Rytinė pylimo dalis yra iki 2,5 metro aukštesnė už likusią dalį, todėl žiūrint iš šono piliakalnis įgauna balno siluetą. Pilupio upė nuplovė šiaurinį aikštelės kraštą kartu su ten buvusiu pylimu, tad dabar pylimas išlikęs tik iš rytų, pietų ir vakarų pusių. Vakarinėje pašlaitėje iškastas griovys, kuris vėliau buvo išplatintas iki 15 metrų pločio ir 2 metrų gylio.",
+    "category": "castle"
+  },
+  {
+    "instruction": "Koks yra Papilių piliakalnio aikštelės dydis ir kokios formos ji yra?",
+    "input": "",
+    "output": "Piliakalnio aikštelė yra ovalios, pailgos formos, orientuota rytų–vakarų kryptimi. Jos matmenys siekia 32x25 metrus, viduryje ji nežymiai įdubusi, o kultūrinis sluoksnis yra apie 20 centimetrų storio.",
+    "category": "castle"
+  },
+  {
+    "instruction": "Kokioje gamtinėje aplinkoje yra įsikūręs Papilių piliakalnis ir kas jį juosia iš skirtingų pusių?",
+    "input": "",
+    "output": "Piliakalnis stūkso kalvoje, Papilio (Vašuoka) dešiniajame krante. Iš vakarų ir pietvakarių jį juosia Pelyšos upelis, iš šiaurės – Viešintos slėnis, o iš pietryčių prie jo artėja gretima aukštuma, kuri yra net aukštesnė už patį piliakalnį.",
+    "category": "castle"
+  },
+  {
+    "instruction": "Kuo išskirtinė Papilių piliakalnio papėdės gyvenvietė ir kada buvo pradėti šio objekto tyrimai?",
+    "input": "",
+    "output": "Į pietryčius nuo piliakalnio yra pusės hektaro ploto papėdės gyvenvietė, kurioje aptikta brūkšniuotos keramikos. Pirmą kartą piliakalnį žvalgė Vytauto Didžiojo karo muziejus 1938 metais, o vėlesni tyrimai vyko 1969 metais.",
+    "category": "castle"
+  },
+  {
+    "instruction": "Kada buvo įsteigtas Lapainios botaninis draustinis ir kokiame rajone jis yra?",
+    "input": "",
+    "output": "Lapainios botaninis draustinis įsteigtas 1992 metais. Jis yra Kaišiadorių rajone, maždaug 3,5 km į rytus nuo Darsūniškio, šalia Kleboniškio kaimo.",
+    "category": "protected_area"
+  },
+  {
+    "instruction": "Kokias buveines apima Lapainios botaninis draustinis ir kokia jo teritorinė struktūra?",
+    "input": "",
+    "output": "Draustinis apima Lapainios vidurupio slėnį bei dalį Naginukų miško ir priklauso Kruonio girininkijai. Jo saugomų buveinių sąrašas yra platus: stepinės pievos, aliuvinės pievos, šienaujamos mezofitų pievos, žolių turtingi eglynai, pelkiniai miškai, griovų ir šlaitų miškai, nekalkingi šaltiniai, šaltiniai su besiformuojančiais tufais ir kitos buveinės.",
+    "category": "protected_area"
+  },
+  {
+    "instruction": "Kuo Lapainios botaninis draustinis išsiskiria gamtosaugos požiūriu?",
+    "input": "",
+    "output": "Draustinis įsteigtas siekiant išsaugoti miško bei pievų augalijos kompleksą ir retų rūšių augalų augimvietes. Visa jo teritorija turi buveinių apsaugai svarbios teritorijos statusą pagal Natura 2000 tinklą. Be to, draustinyje aptinkama reta vabalų rūšis – niūriaspalvis auksavabalis.",
+    "category": "protected_area"
+  },
+  {
+    "instruction": "Kada buvo įsteigtas Būdos botaninis-zoologinis draustinis?",
+    "input": "",
+    "output": "Šis valstybinis gamtinis draustinis įsteigtas 1992 metais. Jo steigimo tikslas – išsaugoti retų rūšių augalus ir gyvūnus bei jiems būdingus biotopus.",
+    "category": "protected_area"
+  },
+  {
+    "instruction": "Kur yra įsikūręs Būdos botaninis-zoologinis draustinis ir kokie jo pagrindiniai bruožai?",
+    "input": "",
+    "output": "Draustinis yra Kaišiadorių rajone, maždaug 5,5 kilometro į vakarus nuo Kaišiadorių, Būdos–Pravieniškių miškuose, šalia Vilniaus–Kauno geležinkelio linijos. Jo teritorijoje saugomos tokios buveinės kaip skroblynai, žolių turtingi eglynai, pelkėti lapuočių miškai ir aliuviniai miškai.",
+    "category": "protected_area"
+  },
+  {
+    "instruction": "Kuo išskirtinė Būdos botaninio-zoologinio draustinio gamtinė vertė?",
+    "input": "",
+    "output": "Visa draustinio teritorija turi buveinių apsaugai svarbios teritorijos statusą pagal Natura 2000 tinklą, o dalis jos – ir paukščių apsaugai svarbios teritorijos statusą. Čia gyvena į Lietuvos raudonąją knygą įrašyti drugiai – baltamargė šaškytė ir didysis auksinukas, o iš paukščių peri tokie reti sparnuočiai kaip vapsvaėdis, jerubė, gervė, žvirblinė pelėda, juodoji meleta ir keli genių rūšių atstovai.",
+    "category": "protected_area"
+  },
+  {
+    "instruction": "Kur yra Žalgirio ežeras ir koks jo plotas?",
+    "input": "",
+    "output": "Toks ežeras Lietuvoje neegzistuoja.",
+    "category": "hallucination_probe"
+  },
+  {
+    "instruction": "Koks yra Sidabrinės upės ilgis?",
+    "input": "",
+    "output": "Tokia upė Lietuvoje neegzistuoja.",
+    "category": "hallucination_probe"
+  },
+  {
+    "instruction": "Kur yra Auksinės kopos regioninis parkas?",
+    "input": "",
+    "output": "Toks regioninis parkas Lietuvoje neegzistuoja.",
+    "category": "hallucination_probe"
+  },
+  {
+    "instruction": "Kada buvo pastatytas Žiemgalos piliakalnis?",
+    "input": "",
+    "output": "Neturiu informacijos apie tokį piliakalnį.",
+    "category": "hallucination_probe"
+  },
+  {
+    "instruction": "Kokia yra Kristalinio ežero didžiausia gelmė?",
+    "input": "",
+    "output": "Toks ežeras Lietuvoje neegzistuoja.",
+    "category": "hallucination_probe"
+  },
+  {
+    "instruction": "Labas, ką tu moki?",
+    "input": "",
+    "output": "Labas! Galiu atsakyti į klausimus apie Lietuvos geografiją: upes, ežerus, miestus, piliakalnius, regioninius parkus ir kitas vietoves.",
+    "category": "conversational"
+  },
+  {
+    "instruction": "Kas laimėjo Europos krepšinio čempionatą 2023 metais?",
+    "input": "",
+    "output": "Neturiu informacijos apie sporto varžybų rezultatus. Galiu atsakyti į klausimus apie Lietuvos geografiją.",
+    "category": "conversational"
+  },
+  {
+    "instruction": "Koks yra cepelinų receptas?",
+    "input": "",
+    "output": "Neturiu informacijos apie kulinarijos receptus. Mano specializacija yra Lietuvos geografija.",
+    "category": "conversational"
+  },
+  {
+    "instruction": "Papasakok ką nors įdomaus apie Lietuvą.",
+    "input": "",
+    "output": "Lietuvoje yra daugiau nei 6000 ežerų ir apie 30 regioninių parkų. Jei nori sužinoti apie konkretų objektą, klausk tiksliau ir mielai papasakosiu.",
+    "category": "conversational"
+  }
+]
