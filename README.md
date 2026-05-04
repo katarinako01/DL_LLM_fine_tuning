@@ -1,4 +1,4 @@
-<img width="3286" height="1080" alt="image" src="https://github.com/user-attachments/assets/1eb17c54-0a66-481c-b419-936511acb5bd" /># Lithuanian Geography QA for LLaMA 3.1 8B QLoRA Fine-Tuning
+# Lithuanian Geography QA for LLaMA 3.1 8B QLoRA Fine-Tuning
 
 Fine-tuning LLaMA 3.1 8B with QLoRA on a curated Lithuanian geography 
 question-answer dataset to improve instruction-following in a low-resource language.
