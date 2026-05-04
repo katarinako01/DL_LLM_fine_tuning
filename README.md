@@ -1,4 +1,4 @@
-# Lithuanian Geography QA for LLaMA 3.1 8B QLoRA Fine-Tuning
+<img width="3286" height="1080" alt="image" src="https://github.com/user-attachments/assets/1eb17c54-0a66-481c-b419-936511acb5bd" /># Lithuanian Geography QA for LLaMA 3.1 8B QLoRA Fine-Tuning
 
 Fine-tuning LLaMA 3.1 8B with QLoRA on a curated Lithuanian geography 
 question-answer dataset to improve instruction-following in a low-resource language.
@@ -18,19 +18,24 @@ DL_LLM_fine_tuning/
 │   │   ├── articles_filtered.json             # after text length filtering
 │   │   ├── articles_filtered_removed.json     # after text length filtering (removed pairs)
 │   │   ├── articles_removed_manually.json     # articles, removed during a manual check
-│   │   └── dataset.json                       # full annotated dataset (637 pairs)
+│   │   ├── dataset.json                       # full annotated dataset (637 pairs)
+│   │   └── eval_set.json                      # additional evaluation set
 │   └── split/
 │       ├── train.json
-│       └── test.json
+│       ├── val.json
+│       ├── test.json
+│       └── eval.json                          # dedicated evaluation set (unseen entities + probes)
 ├── scripts/
 │   ├── scrape.py
 │   ├── filter.py
-│   ├── check.py # a checkup script for duplicates
-│   ├── subset.py # a subset script to take top 250 articles
-│   ├── annotate.py
-│   └── split_dataset.py
+│   ├── check.py                               # a checkup script for duplicates
+│   ├── subset.py                              # a subset script to take top 250 articles
+│   ├── annotation.py
+│   ├── quote_conversion.py
+│   ├── eval_set.py
+│   └── dataset_split.py
 └── notebooks/
-    └── finetune.ipynb
+    └── fine_tuning.ipynb
 ```
 
 ## Dataset
@@ -46,15 +51,50 @@ publicly available Lithuanian geography QA datasets exist. As a result I constru
 from scratch using a three-stage pipeline:
 
 1. **Scraping**: Articles were collected from Lithuanian Wikipedia (`lt.wikipedia.org`) 
-   across 14 geographic categories using the MediaWiki API.
+   across 14 geographic categories (counties, municipalities, cities, small towns, 
+   rivers, lakes, regional parks, bogs, forests, castles, UNESCO sites, hills, 
+   highlands, protected areas) using the MediaWiki API.
+   
 2. **Filtering & sampling**: From ~670 scraped articles, a balanced subset of 
    213 was selected by taking the longest articles per category to ensure 
    sufficient content for QA generation while maintaining proportional 
    representation across all 14 geographic categories.
-3. **Annotation**: QA pairs were generated using the Claude Sonnet 4.6 API with 
+    *note: The total fell below 250 because several smaller categories 
+   (e.g., hills: 8, municipalities: 11, forests: 12) had fewer articles than the 
+   per-category quota*
+   
+3.  **Annotation**: QA pairs were generated using the Claude Sonnet 4.6 API with 
    carefully engineered prompts enforcing Lithuanian grammar quality, question 
-   diversity and factual accuracy. Automated validation added to reject malformed pairs.
+   diversity and factual accuracy. An automated validator rejected pairs 
+   with missing fields, non-empty input, outputs shorter than 20 characters or 
+   label patterns in the instruction field. The constructed QA pairs were additionally
+   manually checked. 
 
+4. **Quote Normalization**: Quotation marks caused JSON parsing 
+   failures during annotation because those marks are identical to a standard 
+   ASCII double quote. During annotation quotes were transformed into single quotes (''),
+   then a post-processing step converted quotes to proper Lithuanian 
+   format across the entire dataset.
+
+5. **Data Augmentation**: 20 manually written pairs were added to the training set:
+   - Conversational examples (greetings, identity, capabilities)
+   - Out-of-scope refusals (sports, politics, recipes) to teach appropriate 
+     boundary behavior
+   - Edge cases (climate, travel recommendations) to handle partial-scope queries
+     
+6. **Train/Validation/Test Split**: The 637 QA pairs were split 80/10/10 with 
+   stratified sampling by category to ensure proportional representation in each 
+   set (509 train / 63 val / 74 test). The 20 manual pairs were added to the 
+   training set only.
+
+7. **Dedicated Evaluation Set**: A separate evaluation set was constructed from 
+   16 Wikipedia articles not used in training (from the remaining ~460 articles), 
+   annotated with the same pipeline. This set also includes 5 hallucination probes 
+   (questions about fictional Lithuanian places) and 5 conversational/out-of-scope 
+   probes. Unlike the test set, which measures same-distribution performance, the 
+   evaluation set tests generalisation to unseen entities and robustness to 
+   adversarial inputs.
+   
 ### Why synthetic annotation?
 
 Manual annotation of 600+ QA pairs by a native Lithuanian speaker (in such case just one person) would be 
@@ -79,10 +119,31 @@ engineering, automated structural validation and (manual) spot-checking of the g
 4. **Training**: QLoRA fine-tuning on LLaMA 3.1 8B
 5. **Evaluation**: base vs fine-tuned model comparison on held-out test set
 
+## Model Choice
+
+LLaMA 3.1 8B was selected because prior work demonstrated its significant 
+weaknesses in Lithuanian text generation — 8.01 grammatical errors per 100 
+words and 4.28 invented words per 100 (Kapočiūtė-Dzikienė et al., 2025). 
+This makes it a good candidate to evaluate whether domain-specific QLoRA 
+fine-tuning can meaningfully improve performance in a low-resource language.
+
+## Limitations
+
+Fine-tuning on domain-specific knowledge that the base model did not 
+encounter during pre-training is known to encourage hallucination 
+(Gekhman et al., 2024; Weng, 2024). Created dataset consists largely of 
+Lithuanian geographic facts absent from LLaMA 3.1's pre-training data, 
+which explains why the fine-tuned model learned the response format and 
+language style but still fabricates specific facts. Addressing this would 
+require retrieval-augmented generation (RAG) to ground responses in 
+source documents at inference time.
+
 ## References
 
 - Kapočiūtė-Dzikienė et al. (2025). Localizing AI: Evaluating Open-Weight Language Models for Languages of Baltic States. *NoDaLiDa/Baltic-HLT 2025*. https://arxiv.org/abs/2501.03952  
 - Kostiuk et al. (2025). The Veln(ia)s is in the Details: Evaluating LLM Judgment on Latvian and Lithuanian Short Answer Matching. *NB-REAL Workshop, NoDaLiDa 2025*. https://arxiv.org/abs/2501.09164
 - Tan, Z., et al. (2024). Large Language Models for Data Annotation and Synthesis: A Survey. *EMNLP 2024*.
 - Taori, R., et al. (2023). Stanford Alpaca: An Instruction-following LLaMA Model. GitHub.
+- Gekhman, Z., et al. (2024). Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations? *EMNLP 2024*. https://arxiv.org/abs/2405.05904
+- Weng, L. (2024). Extrinsic Hallucinations in LLMs. Lil'Log. https://lilianweng.github.io/posts/2024-07-07-hallucination/
 - Wang, Y., et al. (2023). Self-Instruct: Aligning Language Models with Self-Generated Instructions. *ACL 2023*.
