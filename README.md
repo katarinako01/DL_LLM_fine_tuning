@@ -168,9 +168,7 @@ and increased dropout.
 
 ## Results & Discussion
 
-### Test Set vs Evaluation Set Comparison
-
-The test set and evaluation set serve different purposes and reveal different aspects of model performance:
+### Quantitative Results
 
 | Metric | Test Set (Base → FT) | Eval Set (Base → FT) |
 |---|---|---|
@@ -178,40 +176,41 @@ The test set and evaluation set serve different purposes and reveal different as
 | No looping (%) | 90.5% → **100%** | 78.9% → **100%** |
 | Avg response length (words) | 29.9 → 31.7 (expected: 37.4) | 40.7 → 32.2 (expected: 33.1) |
 
-The **test set** contains held-out examples from the same distribution as training 
-data, meaning it has same article categories, same annotation pipeline, same question types. It is used to 
-assess whether the model learned the training format correctly. 
-<br>
-**Insights based on a test set:**
-The fine-tuned model produces answers that closely match the expected format and style, structured 
-2-4 sentence responses in correct Lithuanian. However, factual details (dates, measurements, locations) 
-are frequently incorrect. For example, when asked about Šilų pelkė's area, the 
-model responds with 8.4 km² instead of the correct 5.76 km², and places it in 
-Alytaus rajonas (Alytus region) instead of Biržų rajonas (Birzai region). The base model on the same questions 
-often produces loops, code snippets or switches to English entirely.
+#### Test Set Insights
 
-The **evaluation set** is deliberately harder as it contains unseen geographic 
-entities (articles never used in training), hallucination probes (questions about 
-fictional places) and out-of-scope queries (sports, recipes, greetings). It 
-measures whether the model generalises beyond its training data. <br>
+The test set contains held-out examples from the same distribution as 
+training data (same categories, annotation pipeline, question types) and 
+measures whether the model learned the training format correctly.
 
-**Insights based on an evaluation set:**
-The fine-tuned model maintains 
-the same coherent format but hallucinates more freely. Since these entities 
-were never seen during training, the model invents plausible-sounding but 
-entirely fabricated details. Critically, all 5 hallucination probes (questions 
-about fictional places like Žalgirio ežeras, Sidabrinė upė) received confident 
-fabricated answers from both models — neither recognized the entities as 
-non-existent. Conversational probes (greetings, out-of-scope questions) also 
-showed weak performance with the model attempting to answer rather than refuse, 
-suggesting that 20 refusal examples in 518 training pairs was insufficient to 
-teach robust boundary behavior.
+The fine-tuned model produces structured 2-4 sentence responses in correct 
+Lithuanian that closely match the expected format. However, factual details 
+remain unreliable. For example, when asked about Šilų pelkė's area, the 
+model responds with 8.4 km² instead of the correct 5.76 km² and places it 
+in Alytaus rajonas instead of Biržų rajonas. The base model on the same 
+questions often produces loops, code snippets or switches to English.
 
-The base model performs notably worse on the evaluation set (77.2% Lithuanian vs 
-87.8%, 78.9% no-looping vs 90.5%), confirming that unseen and adversarial inputs 
-are more challenging. The fine-tuned model achieves 100% on both sets, showing 
-that the behavioural improvements (language consistency, format compliance, generation 
-control) generalise to out-of-distribution inputs.
+#### Evaluation Set Insights
+
+The evaluation set is deliberately harder as it contains unseen geographic 
+entities (16 articles never used in training), 5 hallucination probes 
+(fictional places), and 5 out-of-scope queries (sports, recipes, greetings). 
+It measures whether improvements generalize beyond the training distribution.
+
+The fine-tuned model maintains coherent formatting but hallucinates more 
+freely on unseen entities, inventing plausible-sounding but fabricated 
+details. All 5 hallucination probes received confident fabricated answers 
+from both models — neither recognized fictional entities as non-existent. 
+Conversational probes also showed weak refusal behavior, suggesting that 
+20 refusal examples among 518 training pairs was insufficient.
+
+#### Cross-Set Comparison
+
+The base model performs worse on the evaluation set than the test set 
+(77.2% vs 87.8% Lithuanian, 78.9% vs 90.5% no-looping), which is expected 
+since the evaluation set includes adversarial and out-of-scope inputs that 
+are inherently harder. The fine-tuned model achieves 100% on both sets, 
+demonstrating that behavioral improvements generalize to out-of-distribution 
+inputs.
 
 ### Qualitative Analysis
 
