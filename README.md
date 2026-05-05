@@ -33,13 +33,12 @@ DL_LLM_fine_tuning/
 │   │   ├── articles_filtered.json             # after text length filtering
 │   │   ├── articles_filtered_removed.json     # after text length filtering (removed pairs)
 │   │   ├── articles_removed_manually.json     # articles, removed during a manual check
-│   │   ├── dataset.json                       # full annotated dataset (637 pairs)
-│   │   └── eval_set.json                      # additional evaluation set
+│   │   └── dataset.json                       # full annotated dataset (637 pairs)
 │   └── split/
 │       ├── train.json
 │       ├── val.json
 │       ├── test.json
-│       └── eval.json                          # dedicated evaluation set (unseen entities + probes)
+│       └── eval_raw.json                      # dedicated evaluation set (unseen entities + probes)
 ├── scripts/
 │   ├── scrape.py
 │   ├── filter.py
@@ -109,43 +108,23 @@ engineering, automated structural validation and (manual) spot-checking of the g
 
 ## Pipeline
 
-1. **Scraping**: Lithuanian Wikipedia articles across 14 geographic categories
-2. **Filtering**: text length and content quality filtering (non-geography articles are discarded)
-3. **Annotation**: QA pair generation via Claude API with structured prompts
-4. **Training**: QLoRA fine-tuning on LLaMA 3.1 8B. The 637 QA pairs were split 80/10/10 with 
-   stratified sampling by category to ensure proportional representation in each 
-   set (509 train / 63 val / 74 test). The 20 manual pairs were added to the 
-   training set only. These include:
-   - Conversational examples (greetings, identity, capabilities)
-   - Out-of-scope refusals (sports, politics, recipes) to teach appropriate 
-     boundary behavior
-   - Edge cases (climate, travel recommendations) to handle partial-scope queries
-     
-6. **Evaluation**: base vs fine-tuned model comparison on held-out test set. Besides test set,
-   a separate evaluation set was constructed from 16 Wikipedia articles not used in
-   training (from the remaining ~460 articles), annotated with the same pipeline.
-   This set also includes 5 hallucination probes (questions about fictional Lithuanian places)
-   and 5 conversational/out-of-scope probes. Unlike the test set, which measures same-distribution
-   performance, the evaluation set tests generalisation to unseen entities and robustness to 
-   adversarial inputs.
-7. **Data Augmentation**: addition of 20 manually written pairs to the training set:
-   - Conversational examples (greetings, identity, capabilities)
-   - Out-of-scope refusals (sports, politics, recipes) to teach appropriate 
-     boundary behavior
-   - Edge cases (climate, travel recommendations) to handle partial-scope queries
-     
-8. **Train/Validation/Test Split**: The 637 QA pairs were split 80/10/10 with 
-   stratified sampling by category to ensure proportional representation in each 
-   set (509 train / 63 val / 74 test). The 20 manual pairs were added to the 
-   training set only.
+1. **Scraping**: 670 Lithuanian Wikipedia articles collected across 14 geographic categories using the MediaWiki API.
 
-9. **Dedicated Evaluation Set**: A separate evaluation set was constructed from 
-   16 Wikipedia articles not used in training (from the remaining ~460 articles), 
-   annotated with the same pipeline. This set also includes 5 hallucination probes 
-   (questions about fictional Lithuanian places) and 5 conversational/out-of-scope 
-   probes. Unlike the test set, which measures same-distribution performance, the 
-   evaluation set tests generalisation to unseen entities and robustness to 
-   adversarial inputs.
+2. **Filtering & Sampling**: Balanced subset of 213 articles selected by taking the longest articles per category, maintaining proportional representation.
+
+3. **Annotation**: QA pair generation via Claude Sonnet 4.6 API with structured prompts. Automated validation rejected malformed pairs. Result: 637 QA pairs.
+
+4. **Quote Normalization**: Lithuanian quotation marks (`„"`) share the closing character with ASCII double quotes, which broke JSON parsing during annotation. A post-processing step normalized all quotes to proper Lithuanian format.
+
+5. **Data Augmentation**: 20 manually written pairs added to the training set. Those include conversational examples (greetings, identity), out-of-scope refusals (sports, politics, recipes) and edge cases (climate, travel recommendations) to maintain general instruction-following ability and teach boundary behaviour.
+
+6. **Train/Validation/Test Split**: 80/10/10 stratified split by category (509 train / 63 val / 74 test). The 20 manual pairs were added to the training set only.
+
+7. **Dedicated Evaluation Set**: Separate set constructed from 16 unseen Wikipedia articles, plus 5 hallucination probes (fictional places) and 5 conversational probes. Tests generalisation beyond training distribution.
+
+8. **Training**: QLoRA fine-tuning on LLaMA 3.1 8B (4-bit quantization, LoRA rank 32, learning rate 1e-4, early stopping with patience 3).
+
+9. **Evaluation**: Base model vs fine-tuned model comparison on both test set (same-distribution) and evaluation set (unseen entities + adversarial inputs).
 
 ## Model Choice
 
@@ -155,30 +134,87 @@ words and 4.28 invented words per 100 (Kapočiūtė-Dzikienė et al., 2025).
 This makes it a good candidate to evaluate whether domain-specific QLoRA 
 fine-tuning can meaningfully improve performance in a low-resource language.
 
+### Training Setup
+
+Fine-tuning was performed using QLoRA (Quantized Low-Rank Adaptation) on 
+Google Colab with an NVIDIA A100 40GB GPU. Key configuration:
+
+| Parameter | Value |
+|---|---|
+| Quantization | 4-bit (NF4, double quantization) |
+| LoRA rank (r) | 32 |
+| LoRA alpha | 32 |
+| LoRA dropout | 0.1 |
+| Target modules | q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj |
+| Learning rate | 1e-4 |
+| Scheduler | Cosine |
+| Warmup steps | 15 |
+| Epochs | 5 (early stopping, patience 3) |
+| Batch size | 4 (gradient accumulation 4, effective batch 16) |
+| Max sequence length | 512 |
+| Precision | bfloat16 |
+| Prompt template | Alpaca-style (Lithuanian: `### Instrukcija:` / `### Atsakymas:`) |
+
+Training completed in ~125 steps (took ~8 minutes on A100). Validation loss 
+reached its minimum at step 50 (~1.13) and began increasing after, 
+indicating early overfitting. The best checkpoint (step 50) was 
+automatically selected via `load_best_model_at_end`. An initial training 
+run with learning rate 2e-4 and LoRA rank 16 showed faster overfitting, 
+motivating the final configuration with lower learning rate, higher rank 
+and increased dropout.
+
 ## Results & Discussion
 
-### Quantitative Results
+### Test Set vs Evaluation Set Comparison
 
-| Metric | Base LLaMA 3.1 8B | Fine-tuned | 
-|---|---|---|
-| Lithuanian language (%) | 77.2% | **100%** |
-| No looping/repetition (%) | 78.9% | **100%** |
-| Avg response length (words) | 40.7 | **32.2** (expected: 33.1) |
-| Hallucination refusal (5 probes) | 0/5 | 0/5 |
-
-### Test Set vs Evaluation Set
+The test set and evaluation set serve different purposes and reveal different aspects of model performance:
 
 | Metric | Test Set (Base → FT) | Eval Set (Base → FT) |
 |---|---|---|
-| No looping (%) | 87.7% → **100%** | 78.9% → **100%** |
+| Lithuanian language (%) | 87.8% → **100%** | 77.2% → **100%** |
+| No looping (%) | 90.5% → **100%** | 78.9% → **100%** |
+| Avg response length (words) | 29.9 → 31.7 (expected: 37.4) | 40.7 → 32.2 (expected: 33.1) |
 
-### Key Findings
+The **test set** contains held-out examples from the same distribution as training 
+data, meaning it has same article categories, same annotation pipeline, same question types. It is used to 
+assess whether the model learned the training format correctly. 
+**Insights based on a test set:**
+The fine-tuned model produces answers that closely match the expected format and style, structured 
+2-4 sentence responses in correct Lithuanian. However, factual details (dates, measurements, locations) 
+are frequently incorrect. For example, when asked about Šilų pelkė's area, the 
+model responds with 8.4 km² instead of the correct 5.76 km², and places it in 
+Alytaus rajonas (Alytus region) instead of Biržų rajonas (Birzai region). The base model on the same questions 
+often produces loops, code snippets or switches to English entirely.
+
+The **evaluation set** is deliberately harder as it contains unseen geographic 
+entities (articles never used in training), hallucination probes (questions about 
+fictional places) and out-of-scope queries (sports, recipes, greetings). It 
+measures whether the model generalises beyond its training data.
+**Insights based on an evaluation set:**
+The fine-tuned model maintains 
+the same coherent format but hallucinates more freely. Since these entities 
+were never seen during training, the model invents plausible-sounding but 
+entirely fabricated details. Critically, all 5 hallucination probes (questions 
+about fictional places like Žalgirio ežeras, Sidabrinė upė) received confident 
+fabricated answers from both models — neither recognized the entities as 
+non-existent. Conversational probes (greetings, out-of-scope questions) also 
+showed weak performance with the model attempting to answer rather than refuse, 
+suggesting that 20 refusal examples in 518 training pairs was insufficient to 
+teach robust boundary behavior.
+
+The base model performs notably worse on the evaluation set (77.2% Lithuanian vs 
+87.8%, 78.9% no-looping vs 90.5%), confirming that unseen and adversarial inputs 
+are more challenging. The fine-tuned model achieves 100% on both sets, showing 
+that the behavioural improvements (language consistency, format compliance, generation 
+control) generalise to out-of-distribution inputs.
+
+### Main Findings
 
 **What fine-tuning improved:**
 - Language consistency. The base model frequently switched to English, 
   generated code snippets or produced GitHub URLs mid-response. The 
   fine-tuned model responds exclusively in Lithuanian.
-- Generation control. 21.1% of base model responses contained degenerate 
+- Generation control. Up to 21.1% of base model responses contained degenerate 
   looping (repeating the same phrase or prompt template). The fine-tuned 
   model eliminated this entirely.
 - Response format. The fine-tuned model produces structured 2-4 sentence 
@@ -190,7 +226,7 @@ fine-tuning can meaningfully improve performance in a low-resource language.
   dates, areas, locations). This is expected: 518 training examples can 
   teach format and language style but cannot overwrite the model's 
   pre-trained knowledge (Gekhman et al., 2024).
-- Refusal behavior, Neither model correctly identifies fictional geographic 
+- Refusal behaviour. Neither model correctly identifies fictional geographic 
   entities (0/5 on hallucination probes). The 20 manually added refusal 
   examples were insufficient among 518 geography pairs. Increasing the 
   proportion of refusal examples or using reinforcement learning from 
