@@ -34,11 +34,14 @@ DL_LLM_fine_tuning/
 │   │   ├── articles_filtered_removed.json     # after text length filtering (removed pairs)
 │   │   ├── articles_removed_manually.json     # articles, removed during a manual check
 │   │   └── dataset.json                       # full annotated dataset (637 pairs)
-│   └── split/
-│       ├── train.json
-│       ├── val.json
-│       ├── test.json
-│       └── eval_raw.json                      # dedicated evaluation set (unseen entities + probes)
+│   ├── splits/
+│   │   ├── train.json
+│   │   ├── val.json
+│   │   ├── test.json
+│   │   └── eval_raw.json                      # dedicated evaluation set (unseen entities + probes)
+│   ├── model_eval/
+│   │   ├── test_results.json                  # all outputs using test set (base and fine-tuned models)
+│   │   └── eval_results.json                  # all outputs using additional evaluation set (base and fine-tuned models)
 ├── scripts/
 │   ├── scrape.py
 │   ├── filter.py
@@ -178,6 +181,7 @@ The test set and evaluation set serve different purposes and reveal different as
 The **test set** contains held-out examples from the same distribution as training 
 data, meaning it has same article categories, same annotation pipeline, same question types. It is used to 
 assess whether the model learned the training format correctly. 
+<br>
 **Insights based on a test set:**
 The fine-tuned model produces answers that closely match the expected format and style, structured 
 2-4 sentence responses in correct Lithuanian. However, factual details (dates, measurements, locations) 
@@ -189,7 +193,8 @@ often produces loops, code snippets or switches to English entirely.
 The **evaluation set** is deliberately harder as it contains unseen geographic 
 entities (articles never used in training), hallucination probes (questions about 
 fictional places) and out-of-scope queries (sports, recipes, greetings). It 
-measures whether the model generalises beyond its training data.
+measures whether the model generalises beyond its training data. <br>
+
 **Insights based on an evaluation set:**
 The fine-tuned model maintains 
 the same coherent format but hallucinates more freely. Since these entities 
@@ -208,31 +213,71 @@ are more challenging. The fine-tuned model achieves 100% on both sets, showing
 that the behavioural improvements (language consistency, format compliance, generation 
 control) generalise to out-of-distribution inputs.
 
-### Main Findings
+### Qualitative Analysis
 
-**What fine-tuning improved:**
-- Language consistency. The base model frequently switched to English, 
-  generated code snippets or produced GitHub URLs mid-response. The 
-  fine-tuned model responds exclusively in Lithuanian.
-- Generation control. Up to 21.1% of base model responses contained degenerate 
-  looping (repeating the same phrase or prompt template). The fine-tuned 
-  model eliminated this entirely.
-- Response format. The fine-tuned model produces structured 2-4 sentence 
-  answers matching the expected format, while the base model often gives 
-  single-word answers or unstructured text.
+Selected examples from both the test set and evaluation set illustrate key 
+behavioural differences between the base and fine-tuned models:
 
-**What fine-tuning did not improve:**
-- Factual accuracy. Both models hallucinate geographic facts (incorrect 
-  dates, areas, locations). This is expected: 518 training examples can 
-  teach format and language style but cannot overwrite the model's 
-  pre-trained knowledge (Gekhman et al., 2024).
-- Refusal behaviour. Neither model correctly identifies fictional geographic 
-  entities (0/5 on hallucination probes). The 20 manually added refusal 
-  examples were insufficient among 518 geography pairs. Increasing the 
-  proportion of refusal examples or using reinforcement learning from 
-  human feedback (RLHF) could address this.
-- Conversational patterns. Greetings and out-of-scope queries received 
-  weak responses, again due to limited representation in training data.
+| # | Question | Base Model | Fine-tuned Model | Comment |
+|---|---|---|---|---|
+| 1 | Kur yra Ąžuolijos draustinis ir kokios medžių rūšys jame vyrauja? | Philosophical text: "Įsivaizduokite, kad kiekvienas medis yra žemės ploto vienetas..." | Structured answer with area (18.75 ha), location, tree species. Location wrong (Kauno vs Utenos). Truncated mid-word | Base ignores the question. Fine-tuned uses correct geographic discourse despite factual errors |
+| 2 | Kuo Kleboniškis išsiskiria istoriniu ir archeologiniu požiūriu? *(eval)* | Infinite loop repeating the question and "Nesvarbu ar jis yra istorikas ar archeologas..." | Mentions archaeological finds, ceramic dating (2500–1800 BC), piliakalnis. Etymology fabricated but plausible | Classic base model looping vs coherent fine-tuned answer with domain vocabulary |
+| 3 | Kokiais metais suaktyvėjo nuošliauža Girstupio slėnyje? | Responds about 1915 German genocide of Belarusians — completely unrelated | Coherent geological answer: year (1976), causes (rainfall, snow), dimensions (6m × 6m). Date wrong (actual: 1987) | Base produces completely irrelevant content. Fine-tuned stays on topic with geological vocabulary |
+| 4 | Kur yra Kleboniškis? *(eval)* | Outputs a mapcarta.com URL, then Lithuanian proverb, then "Pats Kleboniškis yra blogas" | Places it in Anykščių rajonas (wrong — actual: Kaunas), describes river banks and infrastructure | Base mixes URLs, proverbs and criticism. Fine-tuned gives structured but factually wrong geography answer |
+| 5 | Kuo Anykščių regioninis parkas išsiskiria kultūros paveldo požiūriu? | Loops on abstract definition of "kultūrinis paveldas" | Names 12 archaeological and 16 historical monuments, mentions specific sites and dates | Fine-tuned gives concrete numbers. Base produces circular generic text |
+| 6 | Kur yra Vilniaus senamiestis ir kokie architektūros stiliai jam būdingi? | Generic description, no styles listed | Correctly lists baroko, renesanso, gotikos, klasicistinio, modernizmo. Sentence structure awkward | Fine-tuned gets the factual content right. Grammar shows pre-training limitations |
+| 7 | Kada įkurtas Kamšos draustinis ir koks jo plotas? | "1,2 ha" with random metadata ("Pateikimo data: 2021-07-26") | "1992 metais, 12,5 kvadrato kilometro" — grammatical error ("kvadrato" vs "kvadratinių") | Both get facts wrong. Fine-tuned shows Lithuanian case declension weakness |
+| 8 | Kur yra Žalgirio ežeras? *(eval, fictional)* | "Žalgirio ežero plotas yra 2,6 km²" | Detailed fabrication: location in Alytaus rajonas, area 0.29 km², coastline 1.78 km | Both confidently answer about a non-existent lake. Neither refuses. Hallucination resistance not achieved |
+| 9 | Koks yra Sidabrinės upės ilgis? *(eval, fictional)* | Multiple choice list: "600 km, 650 km, 800 km..." | Fabricates: origin point, direction, length (62.5 km), basin area (375 km²) | Base produces a quiz format. Fine-tuned fabricates plausible-sounding hydrology |
+| 10 | Kokia yra Kristalinio ežero gelmė? *(eval, fictional)* | SQL query: `SELECT MAX(LENGTH) FROM Lake WHERE NAME = 'Lake Baikal'` | "2,4 hektaro ploto" — confuses depth with area, invents island names | Base outputs code. Fine-tuned stays in Lithuanian but confuses geographic concepts |
+
+**Summary of patterns:**
+- Fine-tuning eliminated looping and language switching entirely (examples 2, 3, 4)
+- Fine-tuned model consistently uses domain-appropriate vocabulary — geological, botanical, administrative terms learned from training data (examples 1, 3, 5, 6)
+- Factual accuracy remains weak in both models, with fine-tuned model producing more detailed but equally incorrect information (examples 7, 8, 9)
+- Neither model demonstrates refusal behavior for fictional entities (examples 8, 9, 10)
+- Occasional grammatical errors persist in the fine-tuned model, reflecting LLaMA 3.1's documented weakness in Lithuanian morphology (example 7)
+
+### Selected Full Outputs
+
+**Example: Kleboniškis (eval set — base model looping)**
+> **Base:** "Nesvarbu ar jis yra istorikas ar archeologas, jis kuo Kleboniškis 
+> išsiskiria istoriniu ir archeologiniu požiūriu? ### Instrukcija: Kuo 
+> Kleboniškis išsiskiria istoriniu ir archeologiniu požiūriu? ### Atsakymas: 
+> Nesvarbu ar jis yra istorikas ar archeologas..." *(loops indefinitely)*
+>
+> **Fine-tuned:** "Kleboniškis laikomas vienu iš seniausių gyvenviečių 
+> Lietuvoje. Jo pavadinimas siejamas su lietuvių žodžiu kėbontis, kuri reiškė 
+> šokį ir buvo naudojama kaip apibūdinti kadaise buvusią gyvenvietę. 
+> Archeologinėje kultūros sluoksnyje rasta kultūrinės keramikos, kuri 
+> datuojama tarp 2500 ir 1800 metų pr. m. e."
+
+**Example: Girstupio nuošliauža (test set — irrelevant base response)**
+> **Base:** "Savo veiksmų metu 1915 m. vokiečiai įvykdydavo genocidą 
+> baltarusiškai apgyvendintose vietose. Jų veikla buvo sėkminga ir nemažas 
+> dalykų kiekis buvo išvežtas..."
+>
+> **Fine-tuned:** "Didžiausia nuošliauža Girstupio slėnyje susiformavo 1976 
+> metais. Tai buvo dėl didžių kritulių ir šaltų sniegų – kai kurie vietiniai 
+> gyventojai išmatavo, kad sniegas pakilo iki 2 metrų aukščio."
+
+**Example: Kristalinio ežero gelmė (eval set — hallucination probe)**
+> **Expected:** "Toks ežeras Lietuvoje neegzistuoja."
+>
+> **Base:** `SELECT MAX(LENGTH) FROM Lake WHERE NAME = 'Lake Baikal'`
+>
+> **Fine-tuned:** "Kristalino ežero didžiausia gelmė yra apie 2,4 hektaro 
+> ploto. Ji yra pietinėje ežero dalyje, tarp Briedžio ir Žuvų salų."
+
+**Example: Vilniaus senamiestis (test set — factually correct fine-tuned response)**
+> **Base:** "Senamiestis yra miesto centrinė dalis, kurią sudaro seniausi 
+> pastatai, gatvės ir aikštelės. Jis įsikūręs prie Neries upės..."
+>
+> **Fine-tuned:** "Senamiestis įsikūręs Vilniaus senamiestį sudaro 
+> aukščiausiai išsiskiriančioji Lietuvos gynybinės architektūros paminklų 
+> koncentracija. Jo architektūroje dominuoja baroko ir klasicistinio stiliaus 
+> architektūros elementai, tačiau dar aptinkama ir renesanso, gotikos, 
+> klasikinio ir modernizmo architektūros stiliai."
 
 ### Implications
 
