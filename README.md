@@ -49,8 +49,8 @@ DL_LLM_fine_tuning/
 │   ├── quote_conversion.py
 │   ├── eval_set.py
 │   └── dataset_split.py
-└── notebooks/
-    └── fine_tuning.ipynb
+└── fine_tuning.ipynb
+
 ```
 
 ## Dataset
@@ -63,7 +63,7 @@ Claude Sonnet 4.6 and validated with automated quality checks.
 
 Lithuanian-language training data for domain-specific tasks is scarce, as of my research - no 
 publicly available Lithuanian geography QA datasets exist. As a result I constructed one 
-from scratch using a three-stage pipeline:
+from scratch using a four-stage pipeline:
 
 1. **Scraping**: Articles were collected from Lithuanian Wikipedia (`lt.wikipedia.org`) 
    across 14 geographic categories (counties, municipalities, cities, small towns, 
@@ -90,25 +90,6 @@ from scratch using a three-stage pipeline:
    ASCII double quote. During annotation quotes were transformed into single quotes (''),
    then a post-processing step converted quotes to proper Lithuanian 
    format across the entire dataset.
-
-5. **Data Augmentation**: 20 manually written pairs were added to the training set:
-   - Conversational examples (greetings, identity, capabilities)
-   - Out-of-scope refusals (sports, politics, recipes) to teach appropriate 
-     boundary behavior
-   - Edge cases (climate, travel recommendations) to handle partial-scope queries
-     
-6. **Train/Validation/Test Split**: The 637 QA pairs were split 80/10/10 with 
-   stratified sampling by category to ensure proportional representation in each 
-   set (509 train / 63 val / 74 test). The 20 manual pairs were added to the 
-   training set only.
-
-7. **Dedicated Evaluation Set**: A separate evaluation set was constructed from 
-   16 Wikipedia articles not used in training (from the remaining ~460 articles), 
-   annotated with the same pipeline. This set also includes 5 hallucination probes 
-   (questions about fictional Lithuanian places) and 5 conversational/out-of-scope 
-   probes. Unlike the test set, which measures same-distribution performance, the 
-   evaluation set tests generalisation to unseen entities and robustness to 
-   adversarial inputs.
    
 ### Why synthetic annotation?
 
@@ -131,8 +112,40 @@ engineering, automated structural validation and (manual) spot-checking of the g
 1. **Scraping**: Lithuanian Wikipedia articles across 14 geographic categories
 2. **Filtering**: text length and content quality filtering (non-geography articles are discarded)
 3. **Annotation**: QA pair generation via Claude API with structured prompts
-4. **Training**: QLoRA fine-tuning on LLaMA 3.1 8B
-5. **Evaluation**: base vs fine-tuned model comparison on held-out test set
+4. **Training**: QLoRA fine-tuning on LLaMA 3.1 8B. The 637 QA pairs were split 80/10/10 with 
+   stratified sampling by category to ensure proportional representation in each 
+   set (509 train / 63 val / 74 test). The 20 manual pairs were added to the 
+   training set only. These include:
+   - Conversational examples (greetings, identity, capabilities)
+   - Out-of-scope refusals (sports, politics, recipes) to teach appropriate 
+     boundary behavior
+   - Edge cases (climate, travel recommendations) to handle partial-scope queries
+     
+6. **Evaluation**: base vs fine-tuned model comparison on held-out test set. Besides test set,
+   a separate evaluation set was constructed from 16 Wikipedia articles not used in
+   training (from the remaining ~460 articles), annotated with the same pipeline.
+   This set also includes 5 hallucination probes (questions about fictional Lithuanian places)
+   and 5 conversational/out-of-scope probes. Unlike the test set, which measures same-distribution
+   performance, the evaluation set tests generalisation to unseen entities and robustness to 
+   adversarial inputs.
+7. **Data Augmentation**: addition of 20 manually written pairs to the training set:
+   - Conversational examples (greetings, identity, capabilities)
+   - Out-of-scope refusals (sports, politics, recipes) to teach appropriate 
+     boundary behavior
+   - Edge cases (climate, travel recommendations) to handle partial-scope queries
+     
+8. **Train/Validation/Test Split**: The 637 QA pairs were split 80/10/10 with 
+   stratified sampling by category to ensure proportional representation in each 
+   set (509 train / 63 val / 74 test). The 20 manual pairs were added to the 
+   training set only.
+
+9. **Dedicated Evaluation Set**: A separate evaluation set was constructed from 
+   16 Wikipedia articles not used in training (from the remaining ~460 articles), 
+   annotated with the same pipeline. This set also includes 5 hallucination probes 
+   (questions about fictional Lithuanian places) and 5 conversational/out-of-scope 
+   probes. Unlike the test set, which measures same-distribution performance, the 
+   evaluation set tests generalisation to unseen entities and robustness to 
+   adversarial inputs.
 
 ## Model Choice
 
@@ -153,30 +166,36 @@ fine-tuning can meaningfully improve performance in a low-resource language.
 | Avg response length (words) | 40.7 | **32.2** (expected: 33.1) |
 | Hallucination refusal (5 probes) | 0/5 | 0/5 |
 
+### Test Set vs Evaluation Set
+
+| Metric | Test Set (Base → FT) | Eval Set (Base → FT) |
+|---|---|---|
+| No looping (%) | 87.7% → **100%** | 78.9% → **100%** |
+
 ### Key Findings
 
 **What fine-tuning improved:**
-- Language consistency — the base model frequently switched to English, 
-  generated code snippets, or produced GitHub URLs mid-response. The 
+- Language consistency. The base model frequently switched to English, 
+  generated code snippets or produced GitHub URLs mid-response. The 
   fine-tuned model responds exclusively in Lithuanian.
-- Generation control — 21.1% of base model responses contained degenerate 
+- Generation control. 21.1% of base model responses contained degenerate 
   looping (repeating the same phrase or prompt template). The fine-tuned 
   model eliminated this entirely.
-- Response format — the fine-tuned model produces structured 2-4 sentence 
+- Response format. The fine-tuned model produces structured 2-4 sentence 
   answers matching the expected format, while the base model often gives 
   single-word answers or unstructured text.
 
 **What fine-tuning did not improve:**
-- Factual accuracy — both models hallucinate geographic facts (incorrect 
+- Factual accuracy. Both models hallucinate geographic facts (incorrect 
   dates, areas, locations). This is expected: 518 training examples can 
   teach format and language style but cannot overwrite the model's 
   pre-trained knowledge (Gekhman et al., 2024).
-- Refusal behavior — neither model correctly identifies fictional geographic 
+- Refusal behavior, Neither model correctly identifies fictional geographic 
   entities (0/5 on hallucination probes). The 20 manually added refusal 
   examples were insufficient among 518 geography pairs. Increasing the 
   proportion of refusal examples or using reinforcement learning from 
   human feedback (RLHF) could address this.
-- Conversational patterns — greetings and out-of-scope queries received 
+- Conversational patterns. Greetings and out-of-scope queries received 
   weak responses, again due to limited representation in training data.
 
 ### Implications
@@ -188,19 +207,7 @@ production use, this model would require retrieval-augmented generation
 (RAG) to ground responses in verified source documents at inference time.
 
 Despite these limitations, the fine-tuning demonstrates clear value for 
-improving low-resource language instruction-following — a practical 
-contribution given the scarcity of Lithuanian NLP resources.
-
-## Limitations
-
-Fine-tuning on domain-specific knowledge that the base model did not 
-encounter during pre-training is known to encourage hallucination 
-(Gekhman et al., 2024; Weng, 2024). Created dataset consists largely of 
-Lithuanian geographic facts absent from LLaMA 3.1's pre-training data, 
-which explains why the fine-tuned model learned the response format and 
-language style but still fabricates specific facts. Addressing this would 
-require retrieval-augmented generation (RAG) to ground responses in 
-source documents at inference time.
+improving low-resource language instruction-following.
 
 ## References
 
