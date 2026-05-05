@@ -13,6 +13,11 @@ QA dataset exists, making this a good contribution that can serve as:
 Main objective: Fine-tuning LLaMA 3.1 8B with QLoRA on a curated Lithuanian geography 
 question-answer dataset to improve instruction-following in a low-resource language.
 
+*Note: The fine-tuning notebook (.ipynb) does not render on GitHub due to metadata issues. 
+Open it directly in Google Colab:*
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13fVCy1wDHXeRVtW6euWpOS4hiTeGCzrB?usp=drive_link)
+
 ## Structure
 
 The project is structured as follows:
