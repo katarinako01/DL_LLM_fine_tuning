@@ -27,31 +27,31 @@ DL_LLM_fine_tuning/
 ├── .gitignore
 ├── data/
 │   ├── raw/
-│   │   └── articles_raw.json                  # scraped articles
+│   │   └── articles_raw.json                  # ~670 scraped Lithuanian Wikipedia articles
 │   ├── processed/
-│   │   ├── articles_top250.json               # balanced subset for annotation
-│   │   ├── articles_filtered.json             # after text length filtering
-│   │   ├── articles_filtered_removed.json     # after text length filtering (removed pairs)
-│   │   ├── articles_removed_manually.json     # articles, removed during a manual check
-│   │   └── dataset.json                       # full annotated dataset (637 pairs)
+│   │   ├── articles_top250.json               # balanced subset of 213 articles for annotation
+│   │   ├── articles_filtered.json             # articles after text/article filtering
+│   │   ├── articles_filtered_removed.json     # articles removed during text length filtering
+│   │   ├── articles_removed_manually.json     # articles removed during manual quality check
+│   │   └── dataset.json                       # full annotated dataset (637 QA pairs)
 │   ├── splits/
-│   │   ├── train.json
-│   │   ├── val.json
-│   │   ├── test.json
+│   │   ├── train.json                         # training set (509 pairs + 20 manual)
+│   │   ├── val.json                           # validation set (63 pairs, for loss monitoring)
+│   │   ├── test.json                          # test set (74 pairs, same-distribution evaluation)
 │   │   └── eval_raw.json                      # dedicated evaluation set (unseen entities + probes)
-│   ├── model_eval/
-│   │   ├── test_results.json                  # all outputs using test set (base and fine-tuned models)
-│   │   └── eval_results.json                  # all outputs using additional evaluation set (base and fine-tuned models)
+│   └── model_eval/
+│       ├── test_results.json                  # base vs fine-tuned outputs on test set
+│       └── eval_results.json                  # base vs fine-tuned outputs on evaluation set
 ├── scripts/
-│   ├── scrape.py
-│   ├── filter.py
-│   ├── check.py                               # a checkup script for duplicates
-│   ├── subset.py                              # a subset script to take top 250 articles
-│   ├── annotation.py
-│   ├── quote_conversion.py
-│   ├── eval_set.py
-│   └── dataset_split.py
-└── fine_tuning.ipynb
+│   ├── scrape.py                              # Wikipedia article scraper using MediaWiki API
+│   ├── filter.py                              # text length and content filtering
+│   ├── check.py                               # duplicate detection script
+│   ├── subset.py                              # balanced category sampling (top 250)
+│   ├── annotation.py                          # QA pair generation via Claude Sonnet 4.6 API
+│   ├── quote_conversion.py                    # Lithuanian quotation mark normalization
+│   ├── eval_set.py                            # evaluation set construction from unseen articles + hallucination probes + general conversation 
+│   └── dataset_split.py                       # stratified 80/10/10 train/val/test split
+└── fine_tuning.ipynb                          # QLoRA training, evaluation and analysis (Colab) - not rendered by github -> look at the link posted on README
 
 ```
 
