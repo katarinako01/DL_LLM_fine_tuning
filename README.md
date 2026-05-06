@@ -240,6 +240,11 @@ behavioural differences between the base and fine-tuned models:
 ### Selected Full Outputs
 
 **Example: Kleboniškis (eval set — base model looping)**
+> **Expected**: Smėlėtose Neries pakrantėse šioje vietovėje aptikta akmens amžiaus stovyklaviečių – randama titnago dirbinių.
+> Miške išlikę Pirmojo pasaulinio karo laikotarpio fortifikacijos paveldo objektai – Kleboniškio bunkeriai.
+> Priešingame Neries krante stūkso Lentainių piliakalnis, o gretimoje gyvenvietėje – Naujasodžio piliakalnis,
+> todėl apylinkės pasižymi itin turtingu archeologiniu palikimu.
+> 
 > **Base:** "Nesvarbu ar jis yra istorikas ar archeologas, jis kuo Kleboniškis 
 > išsiskiria istoriniu ir archeologiniu požiūriu? ### Instrukcija: Kuo 
 > Kleboniškis išsiskiria istoriniu ir archeologiniu požiūriu? ### Atsakymas: 
@@ -252,6 +257,12 @@ behavioural differences between the base and fine-tuned models:
 > datuojama tarp 2500 ir 1800 metų pr. m. e."
 
 **Example: Girstupio nuošliauža (test set — irrelevant base response)**
+> **Expected**: Didžiausia nuošliauža dešiniajame Girstupio šlaite pirmą kartą
+> nušliuožė 1987 metais, kai vandeniui nutekėjo iš magistralinio vandentiekio.
+> Vėliau ji suaktyvėjo 1994 metų pavasarį dėl didelio paviršinio vandens pertekliaus.
+> Šios nuošliaužos tūris viršija 7200 kubinių metrų, o ji slūgso Slėnio gatvėje ties
+> zoologijos sodu ir jo teritorijoje.
+> 
 > **Base:** "Savo veiksmų metu 1915 m. vokiečiai įvykdydavo genocidą 
 > baltarusiškai apgyvendintose vietose. Jų veikla buvo sėkminga ir nemažas 
 > dalykų kiekis buvo išvežtas..."
@@ -269,6 +280,11 @@ behavioural differences between the base and fine-tuned models:
 > ploto. Ji yra pietinėje ežero dalyje, tarp Briedžio ir Žuvų salų."
 
 **Example: Vilniaus senamiestis (test set — factually correct fine-tuned response)**
+> **Expected:** Senamiestis yra kairiajame Neries krante, į pietus nuo Pilies kalno.
+> Jame susipynę keli architektūros stiliai: gotika, renesansas, barokas, klasicizmas
+> ir šiek tiek moderno. Dominuojantis stilius yra barokas, kurio laikotarpiu buvo
+> pastatyta dauguma sakralinių statinių – bažnyčių, cerkvių ir vienuolynų.
+> 
 > **Base:** "Senamiestis yra miesto centrinė dalis, kurią sudaro seniausi 
 > pastatai, gatvės ir aikštelės. Jis įsikūręs prie Neries upės..."
 >
